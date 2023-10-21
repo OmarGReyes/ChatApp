@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct ChatAppApp: App {
+    @StateObject private var messageManager = MessageManager()
     var body: some Scene {
         WindowGroup {
-            ChatUsersScreen()
+            ChatUsersScreen(messageManager: messageManager)
         }
     }
 }

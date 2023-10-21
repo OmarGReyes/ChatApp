@@ -9,23 +9,27 @@ import SwiftUI
 
 struct ChatScreenTextField: View {
     @State private var message: String = ""
-    @Binding private(set) var messages: [Message]
+    @ObservedObject private(set) var messageManager: MessageManager
+    var userId: String
     var body: some View {
         HStack {
             TextField("Enter text", text: $message)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .autocorrectionDisabled(true)
-                .keyboardType(.asciiCapable)
+                .keyboardType(.alphabet)
                 .onSubmit {
-                    messages.append(Message(message: message,
-                                            received: false,
-                                            timestamp: Date(), userId: ""))
+                    guard !message.isEmpty else { return }
+                    messageManager.addMessage(message: Message(message: message,
+                                                               received: false,
+                                                               timestamp: Date(),
+                                                               userId: userId))
                     message = ""
                 }
             Button {
-                messages.append(Message(message: message,
-                                        received: false,
-                                        timestamp: Date(), userId: ""))
+                messageManager.addMessage(message: Message(message: message,
+                                                           received: false,
+                                                           timestamp: Date(),
+                                                           userId: userId))
                 message = ""
                 
             } label: {
@@ -46,6 +50,6 @@ struct ChatScreenTextField: View {
 
 struct ChatScreenTextField_Previews: PreviewProvider {
     static var previews: some View {
-        ChatScreenTextField(messages: .constant(Message.mockMessages))
+        ChatScreenTextField(messageManager: MessageManager(), userId: "1")
     }
 }

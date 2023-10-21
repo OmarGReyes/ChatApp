@@ -18,6 +18,9 @@
 		0DAB40D32ADF722800C5AF87 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAB40D22ADF722800C5AF87 /* Message.swift */; };
 		0DAB40D52AE022D800C5AF87 /* ChatHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAB40D42AE022D800C5AF87 /* ChatHeaderView.swift */; };
 		0DC646DD2AE22E3400CC36A4 /* ChatScreenTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC646DC2AE22E3400CC36A4 /* ChatScreenTextField.swift */; };
+		0DC646E32AE236FD00CC36A4 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0DC646E12AE236FD00CC36A4 /* Model.xcdatamodeld */; };
+		0DC646E52AE2384F00CC36A4 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC646E42AE2384F00CC36A4 /* DataManager.swift */; };
+		0DC6607F2AE45C9A00CC36A4 /* MessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC6607E2AE45C9A00CC36A4 /* MessageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +36,9 @@
 		0DAB40D22ADF722800C5AF87 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		0DAB40D42AE022D800C5AF87 /* ChatHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHeaderView.swift; sourceTree = "<group>"; };
 		0DC646DC2AE22E3400CC36A4 /* ChatScreenTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatScreenTextField.swift; sourceTree = "<group>"; };
+		0DC646E22AE236FD00CC36A4 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		0DC646E42AE2384F00CC36A4 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		0DC6607E2AE45C9A00CC36A4 /* MessageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +71,7 @@
 		0DAB40BF2ADF712C00C5AF87 /* ChatApp */ = {
 			isa = PBXGroup;
 			children = (
+				0DC646E62AE2385D00CC36A4 /* LocalDataManager */,
 				0DAB40D12ADF721800C5AF87 /* Models */,
 				0DAB40CE2ADF71F800C5AF87 /* Views */,
 				0DAB40C02ADF712C00C5AF87 /* ChatAppApp.swift */,
@@ -102,6 +109,16 @@
 				0D06C5262AE0D9E2008E72D4 /* User.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		0DC646E62AE2385D00CC36A4 /* LocalDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				0DC646E12AE236FD00CC36A4 /* Model.xcdatamodeld */,
+				0DC646E42AE2384F00CC36A4 /* DataManager.swift */,
+				0DC6607E2AE45C9A00CC36A4 /* MessageManager.swift */,
+			);
+			path = LocalDataManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,10 +194,13 @@
 				0D06C5292AE0E946008E72D4 /* UserListCell.swift in Sources */,
 				0D06C5252AE0D9D2008E72D4 /* ChatUsersScreen.swift in Sources */,
 				0DC646DD2AE22E3400CC36A4 /* ChatScreenTextField.swift in Sources */,
+				0DC6607F2AE45C9A00CC36A4 /* MessageManager.swift in Sources */,
 				0DAB40D52AE022D800C5AF87 /* ChatHeaderView.swift in Sources */,
 				0DAB40D02ADF720F00C5AF87 /* MessageView.swift in Sources */,
 				0DAB40D32ADF722800C5AF87 /* Message.swift in Sources */,
 				0DAB40C32ADF712C00C5AF87 /* ChatScreen.swift in Sources */,
+				0DC646E32AE236FD00CC36A4 /* Model.xcdatamodeld in Sources */,
+				0DC646E52AE2384F00CC36A4 /* DataManager.swift in Sources */,
 				0DAB40C12ADF712C00C5AF87 /* ChatAppApp.swift in Sources */,
 				0D06C5272AE0D9E2008E72D4 /* User.swift in Sources */,
 			);
@@ -383,6 +403,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0DC646E12AE236FD00CC36A4 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0DC646E22AE236FD00CC36A4 /* Model.xcdatamodel */,
+			);
+			currentVersion = 0DC646E22AE236FD00CC36A4 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0DAB40B52ADF712C00C5AF87 /* Project object */;
 }

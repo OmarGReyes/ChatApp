@@ -8,20 +8,20 @@
 import SwiftUI
 
 struct ChatScreen: View {
-    
-    @State private var messages = Message.mockMessages
     @State private var message: String = ""
+    @ObservedObject var messageManager: MessageManager
+    let user: User
     
     var body: some View {
             VStack {
                 ScrollViewReader { proxy in
                     ScrollView {
-                        ForEach(messages) { message in
+                        ForEach(messageManager.getMessageByUserId(userId: user.userId)) { message in
                             MessageView(message: message)
                         }
                     }
-                    .onChange(of: messages) { messages in
-                        guard let id = messages.last?.id else { return }
+                    .onChange(of: messageManager.messages) { messages in
+                        guard let id = messageManager.messages.last?.id else { return }
                         withAnimation {
                             proxy.scrollTo(id, anchor: .bottom)
                         }
@@ -30,8 +30,9 @@ struct ChatScreen: View {
                         hideKeyboard()
                     }
                 }
-                ChatScreenTextField(messages: $messages)
+                ChatScreenTextField(messageManager: messageManager, userId: user.userId)
             }
+            .navigationTitle(Text(user.name))
     }
 }
 
@@ -43,6 +44,6 @@ extension ChatScreen {
 
 struct ChatScreen_Previews: PreviewProvider {
     static var previews: some View {
-        ChatScreen()
+        ChatScreen(messageManager: MessageManager(), user: User.sampleUsers[0])
     }
 }

@@ -10,6 +10,7 @@ import SwiftUI
 struct UserListCell: View {
     let name: String
     let lastMessage: String
+    let lastMessageHour: String
     var body: some View {
         HStack {
             Image(systemName: "star")
@@ -21,7 +22,8 @@ struct UserListCell: View {
                     .font(.caption2)
             }
             Spacer()
-            Image(systemName: "info.circle")
+            Text(lastMessageHour)
+                .font(.caption)
         }
         .padding(.vertical, 4)
     }
@@ -29,6 +31,6 @@ struct UserListCell: View {
 
 struct UserListCell_Previews: PreviewProvider {
     static var previews: some View {
-        UserListCell(name: "Omar", lastMessage: "¿Qué más?")
+        UserListCell(name: "Omar", lastMessage: "¿Qué más?", lastMessageHour: "12:30")
     }
 }
