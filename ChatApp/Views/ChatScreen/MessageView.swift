@@ -9,9 +9,6 @@ import SwiftUI
 
 struct MessageView: View {
     let message: Message
-    var alignment: Alignment {
-        message.received ? .leading : .trailing
-    }
     @State var displayHour: Bool = false
     var body: some View {
         VStack(alignment: message.received ? .leading : .trailing) {
@@ -40,6 +37,10 @@ struct MessageView: View {
         .onTapGesture {
             displayHour.toggle()
         }
+    }
+    
+    private var alignment: Alignment {
+        message.received ? .leading : .trailing
     }
 }
 
