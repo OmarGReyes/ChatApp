@@ -9,19 +9,19 @@ import SwiftUI
 
 struct ChatScreen: View {
     @State private var message: String = ""
-    @ObservedObject var messageManager: MessageManager
+    @ObservedObject var chatUserScreenViewModel: ChatUserScreenViewModel
     let user: User
     
     var body: some View {
             VStack {
                 ScrollViewReader { proxy in
                     ScrollView {
-                        ForEach(messageManager.getMessageByUserId(userId: user.userId)) { message in
+                        ForEach(chatUserScreenViewModel.getMessagesByUserId(userId: user.userId)) { message in
                             MessageView(message: message)
                         }
                     }
-                    .onChange(of: messageManager.messages) { messages in
-                        guard let id = messageManager.messages.last?.id else { return }
+                    .onChange(of: chatUserScreenViewModel.messages) { messages in
+                        guard let id = chatUserScreenViewModel.getMessagesByUserId(userId: user.userId).last?.id else { return }
                         withAnimation {
                             proxy.scrollTo(id, anchor: .bottom)
                         }
@@ -30,7 +30,7 @@ struct ChatScreen: View {
                         hideKeyboard()
                     }
                 }
-                ChatScreenTextField(messageManager: messageManager, userId: user.userId)
+                ChatScreenTextField(chatUserScreenViewModel: chatUserScreenViewModel, userId: user.userId)
             }
             .navigationTitle(Text(user.name))
     }
@@ -44,6 +44,6 @@ extension ChatScreen {
 
 struct ChatScreen_Previews: PreviewProvider {
     static var previews: some View {
-        ChatScreen(messageManager: MessageManager(), user: User.sampleUsers[0])
+        ChatScreen(chatUserScreenViewModel: ChatUserScreenViewModel(messageManager: MessageManager()), user: User.sampleUsers[0])
     }
 }

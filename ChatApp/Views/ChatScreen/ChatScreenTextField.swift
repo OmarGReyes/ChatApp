@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ChatScreenTextField: View {
     @State private var message: String = ""
-    @ObservedObject private(set) var messageManager: MessageManager
+    @ObservedObject private(set) var chatUserScreenViewModel: ChatUserScreenViewModel
     var userId: String
     var body: some View {
         HStack {
@@ -19,14 +19,14 @@ struct ChatScreenTextField: View {
                 .keyboardType(.alphabet)
                 .onSubmit {
                     guard !message.isEmpty else { return }
-                    messageManager.addMessage(message: Message(message: message,
+                    chatUserScreenViewModel.addMessage(message: Message(message: message,
                                                                received: false,
                                                                timestamp: Date(),
                                                                userId: userId))
                     message = ""
                 }
             Button {
-                messageManager.addMessage(message: Message(message: message,
+                chatUserScreenViewModel.addMessage(message: Message(message: message,
                                                            received: false,
                                                            timestamp: Date(),
                                                            userId: userId))
@@ -50,6 +50,6 @@ struct ChatScreenTextField: View {
 
 struct ChatScreenTextField_Previews: PreviewProvider {
     static var previews: some View {
-        ChatScreenTextField(messageManager: MessageManager(), userId: "1")
+        ChatScreenTextField(chatUserScreenViewModel: ChatUserScreenViewModel(messageManager: MessageManager()), userId: "1")
     }
 }
