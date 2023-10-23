@@ -10,10 +10,9 @@ import SwiftUI
 struct ChatUsersScreen: View {
     // Esta screen debería traer los usuarios y el último mensaje con ese usuario pero traído de CoreData todo esto
     @ObservedObject var messageManager: MessageManager
-    let users = User.sampleUsers
     var body: some View {
         NavigationStack {
-            List(users) { user in
+            List(messageManager.sortedUsers()) { user in
                 NavigationLink(destination: ChatScreen(messageManager: messageManager,
                                                        user: user)) {
                     UserListCell(name: user.name,
