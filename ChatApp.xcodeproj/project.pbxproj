@@ -22,6 +22,7 @@
 		0DC646E52AE2384F00CC36A4 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC646E42AE2384F00CC36A4 /* DataManager.swift */; };
 		0DC6607F2AE45C9A00CC36A4 /* MessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC6607E2AE45C9A00CC36A4 /* MessageManager.swift */; };
 		0DC66AE02AE6CC7100CC36A4 /* ChatUserScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC66ADF2AE6CC7100CC36A4 /* ChatUserScreenViewModel.swift */; };
+		0DC678412AE72BAE00CC36A4 /* EmptyChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC678402AE72BAE00CC36A4 /* EmptyChatView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		0DC646E42AE2384F00CC36A4 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		0DC6607E2AE45C9A00CC36A4 /* MessageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageManager.swift; sourceTree = "<group>"; };
 		0DC66ADF2AE6CC7100CC36A4 /* ChatUserScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUserScreenViewModel.swift; sourceTree = "<group>"; };
+		0DC678402AE72BAE00CC36A4 /* EmptyChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyChatView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				0D06C5282AE0E946008E72D4 /* UserListCell.swift */,
 				0D06C5242AE0D9D2008E72D4 /* ChatUsersScreen.swift */,
 				0DC66ADF2AE6CC7100CC36A4 /* ChatUserScreenViewModel.swift */,
+				0DC678402AE72BAE00CC36A4 /* EmptyChatView.swift */,
 			);
 			path = ChatUsersScreen;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 				0D06C5252AE0D9D2008E72D4 /* ChatUsersScreen.swift in Sources */,
 				0DC646DD2AE22E3400CC36A4 /* ChatScreenTextField.swift in Sources */,
 				0DC6607F2AE45C9A00CC36A4 /* MessageManager.swift in Sources */,
+				0DC678412AE72BAE00CC36A4 /* EmptyChatView.swift in Sources */,
 				0DAB40D52AE022D800C5AF87 /* ChatHeaderView.swift in Sources */,
 				0DAB40D02ADF720F00C5AF87 /* MessageView.swift in Sources */,
 				0DAB40D32ADF722800C5AF87 /* Message.swift in Sources */,

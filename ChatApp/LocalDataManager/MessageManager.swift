@@ -15,7 +15,7 @@ import Foundation
 final class MessageManager: ObservableObject {
     // While this is loading the initial view should be something like whatsApp view
     // If no connection then bring the messages from the localDatabase
-    @Published var messages = Message.mockMessages // Call from DB
+    @Published var messages = Message.emptyMessages // Call from DB ¿how to sync?
     @Published var users = User.sampleUsers // Same here call from DB
 
     func addMessage(message: Message) {
@@ -34,13 +34,12 @@ final class MessageManager: ObservableObject {
         return usersMessages
     }
     
-    func getLastMessageByUserId(userId: String) -> Message {
-        let message = getMessageByUserId(userId: userId).last ??
-        Message(message: "", received: false, timestamp: Date(), userId: "")
+    func getLastMessageByUserId(userId: String) -> Message? {
+        let message = getMessageByUserId(userId: userId).last
         return message
     }
     
     func sortedUsers() -> [User] {
-        return users.sorted { $0.lastInteraction > $1.lastInteraction }
+        return users.compactMap { return $0.lastInteraction == nil ? $0 : nil }.sorted { $0.lastInteraction! > $1.lastInteraction! }
     }
 }

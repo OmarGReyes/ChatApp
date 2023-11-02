@@ -35,4 +35,6 @@ extension Message {
         Message(message: "I'm reading 'The Great Gatsby' by F. Scott Fitzgerald.", received: true, timestamp: Date(), userId: "9"),
         Message( message: "That's a classic! How do you like it?", received: false, timestamp: Date(), userId: "10"),
     ]
+    
+    static var emptyMessages = [Message]()
 }

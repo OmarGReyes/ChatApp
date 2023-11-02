@@ -7,13 +7,23 @@
 
 import Foundation
 
-final class ChatUserScreenViewModel: ObservableObject {
+protocol ChatUserScreenViewModelProtocol: ObservableObject {
+    func addMessage(message: Message)
+    func getMessagesByUserId(userId: String) -> [Message]
+    func getLastMessageByUserId(userId: String) -> Message?
+    func sortedUsers() -> [User]
+}
+
+
+final class ChatUserScreenViewModel: ChatUserScreenViewModelProtocol, ObservableObject {
     @Published var messages: [Message]
+    @Published var users: [User]
     private let messageManager: MessageManager
     
     init(messageManager: MessageManager) {
         self.messageManager = messageManager
         self.messages = messageManager.messages
+        self.users = messageManager.users
     }
     
     func addMessage(message: Message) {
@@ -27,12 +37,18 @@ final class ChatUserScreenViewModel: ObservableObject {
         return usersMessages
     }
     
-    func getLastMessageByUserId(userId: String) -> Message {
+    func getLastMessageByUserId(userId: String) -> Message? {
         messageManager.getLastMessageByUserId(userId: userId)
     }
     
     func sortedUsers() -> [User] {
         // Should this function just be triggered when viewWill appear ?
-        messageManager.users.sorted { $0.lastInteraction > $1.lastInteraction }
+        messageManager.users.filter { user in
+            user.lastInteraction != nil
+        }.sorted { $0.lastInteraction! > $1.lastInteraction! }
+    }
+    
+    func sortedUsersAlphabetically() -> [User] {
+        users.sorted { $0.name < $1.name }
     }
 }

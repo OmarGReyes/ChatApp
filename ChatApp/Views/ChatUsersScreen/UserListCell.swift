@@ -9,8 +9,9 @@ import SwiftUI
 
 struct UserListCell: View {
     let name: String
-    let lastMessage: String
-    let lastMessageHour: String
+    let lastMessage: String?
+    let lastMessageHour: String?
+    var isNewChatList: Bool = false
     var body: some View {
         HStack {
             Image(systemName: "star")
@@ -18,12 +19,16 @@ struct UserListCell: View {
                 Text(name)
                     .font(.subheadline)
                     .fontWeight(.bold)
-                Text(lastMessage)
-                    .font(.caption2)
+                if !isNewChatList {
+                    Text(lastMessage ?? "")
+                        .font(.caption2)
+                }
             }
             Spacer()
-            Text(lastMessageHour)
-                .font(.caption)
+            if !isNewChatList {
+                Text(lastMessageHour ?? "")
+                    .font(.caption)
+            }
         }
         .padding(.vertical, 4)
     }

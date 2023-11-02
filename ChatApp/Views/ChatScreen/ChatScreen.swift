@@ -21,18 +21,25 @@ struct ChatScreen: View {
                         }
                     }
                     .onChange(of: chatUserScreenViewModel.messages) { messages in
-                        guard let id = chatUserScreenViewModel.getMessagesByUserId(userId: user.userId).last?.id else { return }
-                        withAnimation {
-                            proxy.scrollTo(id, anchor: .bottom)
-                        }
+                        gotoLastMessage(proxy: proxy)
                     }
                     .onTapGesture {
                         hideKeyboard()
+                    }
+                    .onAppear {
+                        gotoLastMessage(proxy: proxy)
                     }
                 }
                 ChatScreenTextField(chatUserScreenViewModel: chatUserScreenViewModel, userId: user.userId)
             }
             .navigationTitle(Text(user.name))
+    }
+    
+    private func gotoLastMessage(proxy: ScrollViewProxy) {
+        guard let id = chatUserScreenViewModel.getMessagesByUserId(userId: user.userId).last?.id else { return }
+        withAnimation {
+            proxy.scrollTo(id, anchor: .bottom)
+        }
     }
 }
 
