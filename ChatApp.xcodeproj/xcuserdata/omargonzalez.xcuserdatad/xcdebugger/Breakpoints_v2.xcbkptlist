@@ -7,47 +7,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "76012BAA-9AE6-4F4B-90AD-14DF1F87574F"
+            uuid = "575229BB-EA63-4444-A54E-2121612BF138"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ChatApp/Views/ChatUsersScreen/ChatUserScreenViewModel.swift"
+            filePath = "ChatApp/Views/ChatScreen/ChatScreen.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "addMessage(message:)"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "gotoLastMessage(proxy:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "76012BAA-9AE6-4F4B-90AD-14DF1F87574F - ef71787bb9052181"
+                  uuid = "575229BB-EA63-4444-A54E-2121612BF138 - 995d120b0f47a873"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "ChatApp.ChatUserScreenViewModel.addMessage(message: ChatApp.Message) -&gt; ()"
+                  symbolName = "ChatApp.ChatScreen.gotoLastMessage(proxy: SwiftUI.ScrollViewProxy) -&gt; ()"
                   moduleName = "ChatApp"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/omargonzalez/Documents/Personal%20projects/ChatApp/ChatApp/Views/ChatUsersScreen/ChatUserScreenViewModel.swift"
+                  urlString = "file:///Users/omargonzalez/Documents/Personal%20projects/ChatApp/ChatApp/Views/ChatScreen/ChatScreen.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "20"
-                  endingLineNumber = "20"
-                  offsetFromSymbolStart = "120">
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "320">
                </Location>
                <Location
-                  uuid = "76012BAA-9AE6-4F4B-90AD-14DF1F87574F - a6e04d84bb1ee67f"
+                  uuid = "575229BB-EA63-4444-A54E-2121612BF138 - 995d120b0f47a873"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (ChatApp.User) -&gt; Swift.Bool in ChatApp.ChatUserScreenViewModel.addMessage(message: ChatApp.Message) -&gt; ()"
+                  symbolName = "ChatApp.ChatScreen.gotoLastMessage(proxy: SwiftUI.ScrollViewProxy) -&gt; ()"
                   moduleName = "ChatApp"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/omargonzalez/Documents/Personal%20projects/ChatApp/ChatApp/Views/ChatUsersScreen/ChatUserScreenViewModel.swift"
+                  urlString = "file:///Users/omargonzalez/Documents/Personal%20projects/ChatApp/ChatApp/Views/ChatScreen/ChatScreen.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "48">
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "900">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -55,144 +55,143 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "BDA8C204-4DBA-40B9-8317-0418A870D272"
+            uuid = "485A11E3-E3AD-4EE4-9E14-95725FDDB6E1"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ChatApp/LocalDataManager/MessageManager.swift"
+            filePath = "ChatApp/Views/ChatScreen/ChatScreenViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "addMessage(message:)"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "fetchMessages(user:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "776A8045-7384-4CAB-A066-862DCA30DB46"
-            shouldBeEnabled = "Yes"
+            uuid = "33EF948E-24C7-4D4F-B0D1-F80FB4B86140"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ChatApp/LocalDataManager/MessageManager.swift"
+            filePath = "ChatApp/Views/ChatScreen/ChatScreenViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "sortedUsers()"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "init(user:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "776A8045-7384-4CAB-A066-862DCA30DB46 - 8fb5d5e5a37a7fe4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ChatApp.MessageManager.sortedUsers() -&gt; Swift.Array&lt;ChatApp.User&gt;"
-                  moduleName = "ChatApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/omargonzalez/Documents/Personal%20projects/ChatApp/ChatApp/LocalDataManager/MessageManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
-                  offsetFromSymbolStart = "40">
-               </Location>
-               <Location
-                  uuid = "776A8045-7384-4CAB-A066-862DCA30DB46 - 15f6c59b54d0f53d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (ChatApp.User) -&gt; Swift.Optional&lt;ChatApp.User&gt; in ChatApp.MessageManager.sortedUsers() -&gt; Swift.Array&lt;ChatApp.User&gt;"
-                  moduleName = "ChatApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/omargonzalez/Documents/Personal%20projects/ChatApp/ChatApp/LocalDataManager/MessageManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
-                  offsetFromSymbolStart = "124">
-               </Location>
-               <Location
-                  uuid = "776A8045-7384-4CAB-A066-862DCA30DB46 - ad9be9c9b2cc62a5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (ChatApp.User, ChatApp.User) -&gt; Swift.Bool in ChatApp.MessageManager.sortedUsers() -&gt; Swift.Array&lt;ChatApp.User&gt;"
-                  moduleName = "ChatApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/omargonzalez/Documents/Personal%20projects/ChatApp/ChatApp/LocalDataManager/MessageManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
-                  offsetFromSymbolStart = "172">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F19FB7B2-698C-420B-AB88-695C5E8B7A57"
+            uuid = "1866EEE3-5D14-4371-8B1D-80E77FE317DF"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ChatApp/Views/ChatUsersScreen/ChatUserScreenViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "sortedUsers()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "F19FB7B2-698C-420B-AB88-695C5E8B7A57 - 68db1d08c26bc118"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ChatApp.ChatUserScreenViewModel.sortedUsers() -&gt; Swift.Array&lt;ChatApp.User&gt;"
-                  moduleName = "ChatApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/omargonzalez/Documents/Personal%20projects/ChatApp/ChatApp/Views/ChatUsersScreen/ChatUserScreenViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "46"
-                  endingLineNumber = "46"
-                  offsetFromSymbolStart = "44">
-               </Location>
-               <Location
-                  uuid = "F19FB7B2-698C-420B-AB88-695C5E8B7A57 - 64a8167ee0935e42"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (ChatApp.User) -&gt; Swift.Bool in ChatApp.ChatUserScreenViewModel.sortedUsers() -&gt; Swift.Array&lt;ChatApp.User&gt;"
-                  moduleName = "ChatApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/omargonzalez/Documents/Personal%20projects/ChatApp/ChatApp/Views/ChatUsersScreen/ChatUserScreenViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "47"
-                  endingLineNumber = "47"
-                  offsetFromSymbolStart = "120">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7079D0DB-B7C8-42B0-B230-3FBB149B7E92"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ChatApp/Views/ChatUsersScreen/ChatUsersScreen.swift"
+            filePath = "ChatApp/Views/ChatScreen/ChatScreen.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
             endingLineNumber = "30"
             landmarkName = "body"
             landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F1972D0A-9F97-43C0-B8A3-C5EF60E20B69"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChatApp/DataManager/Repository/Repository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "fetchUsers()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F1972D0A-9F97-43C0-B8A3-C5EF60E20B69 - 715cba3b2406ca27"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ChatApp.UsersRepository.fetchUsers() -&gt; Swift.Array&lt;ChatApp.User&gt;"
+                  moduleName = "ChatApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/omargonzalez/Documents/Personal%20projects/ChatApp/ChatApp/DataManager/Repository/Repository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "F1972D0A-9F97-43C0-B8A3-C5EF60E20B69 - b48c3c13aa2ec10"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for ChatApp.UsersRepository.fetchUsers() async -&gt; Swift.Array&lt;ChatApp.User&gt;"
+                  moduleName = "ChatApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/omargonzalez/Documents/Personal%20projects/ChatApp/ChatApp/DataManager/Repository/Repository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "F1972D0A-9F97-43C0-B8A3-C5EF60E20B69 - f6d2ae8f1ace05e0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for ChatApp.UsersRepository.fetchUsers() async -&gt; Swift.Array&lt;ChatApp.User&gt;"
+                  moduleName = "ChatApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/omargonzalez/Documents/Personal%20projects/ChatApp/ChatApp/DataManager/Repository/Repository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "F1972D0A-9F97-43C0-B8A3-C5EF60E20B69 - d1961a9ff29aa012"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for ChatApp.UsersRepository.fetchUsers() async -&gt; Swift.Array&lt;ChatApp.User&gt;"
+                  moduleName = "ChatApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/omargonzalez/Documents/Personal%20projects/ChatApp/ChatApp/DataManager/Repository/Repository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B38FE767-F304-47C4-89DD-9985A2EEDE06"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChatApp/Views/ChatUsersScreen/ChatUsersScreenViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "addNewUser(userName:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

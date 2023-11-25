@@ -9,18 +9,18 @@ import SwiftUI
 
 struct ChatScreen: View {
     @State private var message: String = ""
-    @ObservedObject var chatUserScreenViewModel: ChatUserScreenViewModel
-    let user: User
+    @ObservedObject var chatScreenViewModel: ChatScreenViewModel
+    var messageSent: (() -> Void)?
     
     var body: some View {
             VStack {
                 ScrollViewReader { proxy in
                     ScrollView {
-                        ForEach(chatUserScreenViewModel.getMessagesByUserId(userId: user.userId)) { message in
+                        ForEach(chatScreenViewModel.messages) { message in
                             MessageView(message: message)
                         }
                     }
-                    .onChange(of: chatUserScreenViewModel.messages) { messages in
+                    .onChange(of: chatScreenViewModel.messages) { messages in
                         gotoLastMessage(proxy: proxy)
                     }
                     .onTapGesture {
@@ -30,13 +30,16 @@ struct ChatScreen: View {
                         gotoLastMessage(proxy: proxy)
                     }
                 }
-                ChatScreenTextField(chatUserScreenViewModel: chatUserScreenViewModel, userId: user.userId)
+                ChatScreenTextField(chatScreenViewModel: chatScreenViewModel,
+                                    userId: chatScreenViewModel.user.userId) {
+                    messageSent?()
+                }
             }
-            .navigationTitle(Text(user.name))
+            .navigationTitle(Text(chatScreenViewModel.user.name))
     }
     
     private func gotoLastMessage(proxy: ScrollViewProxy) {
-        guard let id = chatUserScreenViewModel.getMessagesByUserId(userId: user.userId).last?.id else { return }
+        guard let id = chatScreenViewModel.messages.last?.id else { return }
         withAnimation {
             proxy.scrollTo(id, anchor: .bottom)
         }
@@ -51,6 +54,6 @@ extension ChatScreen {
 
 struct ChatScreen_Previews: PreviewProvider {
     static var previews: some View {
-        ChatScreen(chatUserScreenViewModel: ChatUserScreenViewModel(messageManager: MessageManager()), user: User.sampleUsers[0])
+        ChatScreen(chatScreenViewModel: ChatScreenViewModel(user: User.sampleUsers.first!), messageSent: nil)
     }
 }

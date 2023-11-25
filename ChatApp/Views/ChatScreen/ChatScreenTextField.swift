@@ -9,29 +9,31 @@ import SwiftUI
 
 struct ChatScreenTextField: View {
     @State private var message: String = ""
-    @ObservedObject private(set) var chatUserScreenViewModel: ChatUserScreenViewModel
+    @ObservedObject private(set) var chatScreenViewModel: ChatScreenViewModel
     var userId: String
+    var messagedSent: (() -> Void)?
     var body: some View {
         HStack {
-            TextField("Enter text", text: $message)
+            TextField("Enter text", text: $message, axis: .vertical)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .autocorrectionDisabled(true)
                 .keyboardType(.alphabet)
                 .onSubmit {
                     guard !message.isEmpty else { return }
-                    chatUserScreenViewModel.addMessage(message: Message(message: message,
+                    chatScreenViewModel.addMessage(message: Message(message: message,
                                                                received: false,
                                                                timestamp: Date(),
                                                                userId: userId))
+                    messagedSent?()
                     message = ""
                 }
             Button {
-                chatUserScreenViewModel.addMessage(message: Message(message: message,
+                chatScreenViewModel.addMessage(message: Message(message: message,
                                                            received: false,
                                                            timestamp: Date(),
                                                            userId: userId))
+                messagedSent?()
                 message = ""
-                
             } label: {
                 Image(systemName: "paperplane")
                     .foregroundColor(.white)
@@ -50,6 +52,7 @@ struct ChatScreenTextField: View {
 
 struct ChatScreenTextField_Previews: PreviewProvider {
     static var previews: some View {
-        ChatScreenTextField(chatUserScreenViewModel: ChatUserScreenViewModel(messageManager: MessageManager()), userId: "1")
+        let user = User.sampleUsers.first!
+        ChatScreenTextField(chatScreenViewModel: ChatScreenViewModel(user: user), userId: user.userId)
     }
 }

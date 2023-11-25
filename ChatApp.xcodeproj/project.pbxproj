@@ -10,25 +10,38 @@
 		0D06C5252AE0D9D2008E72D4 /* ChatUsersScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D06C5242AE0D9D2008E72D4 /* ChatUsersScreen.swift */; };
 		0D06C5272AE0D9E2008E72D4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D06C5262AE0D9E2008E72D4 /* User.swift */; };
 		0D06C5292AE0E946008E72D4 /* UserListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D06C5282AE0E946008E72D4 /* UserListCell.swift */; };
+		0D0D84E72AF45BCF0070BB5D /* ChatScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0D84E62AF45BCF0070BB5D /* ChatScreenViewModel.swift */; };
+		0D7897992AF54C2A00A4EFCF /* ContactsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7897982AF54C2A00A4EFCF /* ContactsScreenView.swift */; };
+		0D79CBCB2B0822F7003E161A /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D79CBCA2B0822F7003E161A /* PersistenceController.swift */; };
+		0D79CBD12B0A9CFE003E161A /* CDMessage+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D79CBD02B0A9CFE003E161A /* CDMessage+Helper.swift */; };
+		0D79CBD32B0AB54D003E161A /* CDUser+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D79CBD22B0AB54D003E161A /* CDUser+Helper.swift */; };
 		0DAB40C12ADF712C00C5AF87 /* ChatAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAB40C02ADF712C00C5AF87 /* ChatAppApp.swift */; };
 		0DAB40C32ADF712C00C5AF87 /* ChatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAB40C22ADF712C00C5AF87 /* ChatScreen.swift */; };
 		0DAB40C52ADF712E00C5AF87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DAB40C42ADF712E00C5AF87 /* Assets.xcassets */; };
 		0DAB40C82ADF712E00C5AF87 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DAB40C72ADF712E00C5AF87 /* Preview Assets.xcassets */; };
 		0DAB40D02ADF720F00C5AF87 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAB40CF2ADF720F00C5AF87 /* MessageView.swift */; };
 		0DAB40D32ADF722800C5AF87 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAB40D22ADF722800C5AF87 /* Message.swift */; };
-		0DAB40D52AE022D800C5AF87 /* ChatHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAB40D42AE022D800C5AF87 /* ChatHeaderView.swift */; };
 		0DC646DD2AE22E3400CC36A4 /* ChatScreenTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC646DC2AE22E3400CC36A4 /* ChatScreenTextField.swift */; };
 		0DC646E32AE236FD00CC36A4 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0DC646E12AE236FD00CC36A4 /* Model.xcdatamodeld */; };
-		0DC646E52AE2384F00CC36A4 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC646E42AE2384F00CC36A4 /* DataManager.swift */; };
-		0DC6607F2AE45C9A00CC36A4 /* MessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC6607E2AE45C9A00CC36A4 /* MessageManager.swift */; };
-		0DC66AE02AE6CC7100CC36A4 /* ChatUserScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC66ADF2AE6CC7100CC36A4 /* ChatUserScreenViewModel.swift */; };
+		0DC66AE02AE6CC7100CC36A4 /* ChatUsersScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC66ADF2AE6CC7100CC36A4 /* ChatUsersScreenViewModel.swift */; };
 		0DC678412AE72BAE00CC36A4 /* EmptyChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC678402AE72BAE00CC36A4 /* EmptyChatView.swift */; };
+		0DEF684F2B0AC7BD00A074ED /* AddNewUserScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEF684E2B0AC7BD00A074ED /* AddNewUserScreen.swift */; };
+		0DEF74132B0D580E00A074ED /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEF74122B0D580E00A074ED /* Repository.swift */; };
+		0DEF74152B0E90F700A074ED /* CoreDataClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEF74142B0E90F700A074ED /* CoreDataClient.swift */; };
+		0DEF74172B0EA3B700A074ED /* NSPredicate+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEF74162B0EA3B700A074ED /* NSPredicate+Helper.swift */; };
+		0DEF741A2B0EA42100A074ED /* CoreDataLocalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEF74192B0EA42100A074ED /* CoreDataLocalManager.swift */; };
+		0DEF741C2B0EA4E500A074ED /* CoreDataLocalManager+UsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEF741B2B0EA4E500A074ED /* CoreDataLocalManager+UsersRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0D06C5242AE0D9D2008E72D4 /* ChatUsersScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUsersScreen.swift; sourceTree = "<group>"; };
 		0D06C5262AE0D9E2008E72D4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0D06C5282AE0E946008E72D4 /* UserListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCell.swift; sourceTree = "<group>"; };
+		0D0D84E62AF45BCF0070BB5D /* ChatScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatScreenViewModel.swift; sourceTree = "<group>"; };
+		0D7897982AF54C2A00A4EFCF /* ContactsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsScreenView.swift; sourceTree = "<group>"; };
+		0D79CBCA2B0822F7003E161A /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		0D79CBD02B0A9CFE003E161A /* CDMessage+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDMessage+Helper.swift"; sourceTree = "<group>"; };
+		0D79CBD22B0AB54D003E161A /* CDUser+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDUser+Helper.swift"; sourceTree = "<group>"; };
 		0DAB40BD2ADF712C00C5AF87 /* ChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DAB40C02ADF712C00C5AF87 /* ChatAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAppApp.swift; sourceTree = "<group>"; };
 		0DAB40C22ADF712C00C5AF87 /* ChatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatScreen.swift; sourceTree = "<group>"; };
@@ -36,13 +49,16 @@
 		0DAB40C72ADF712E00C5AF87 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0DAB40CF2ADF720F00C5AF87 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		0DAB40D22ADF722800C5AF87 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		0DAB40D42AE022D800C5AF87 /* ChatHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHeaderView.swift; sourceTree = "<group>"; };
 		0DC646DC2AE22E3400CC36A4 /* ChatScreenTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatScreenTextField.swift; sourceTree = "<group>"; };
 		0DC646E22AE236FD00CC36A4 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		0DC646E42AE2384F00CC36A4 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		0DC6607E2AE45C9A00CC36A4 /* MessageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageManager.swift; sourceTree = "<group>"; };
-		0DC66ADF2AE6CC7100CC36A4 /* ChatUserScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUserScreenViewModel.swift; sourceTree = "<group>"; };
+		0DC66ADF2AE6CC7100CC36A4 /* ChatUsersScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUsersScreenViewModel.swift; sourceTree = "<group>"; };
 		0DC678402AE72BAE00CC36A4 /* EmptyChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyChatView.swift; sourceTree = "<group>"; };
+		0DEF684E2B0AC7BD00A074ED /* AddNewUserScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewUserScreen.swift; sourceTree = "<group>"; };
+		0DEF74122B0D580E00A074ED /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		0DEF74142B0E90F700A074ED /* CoreDataClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataClient.swift; sourceTree = "<group>"; };
+		0DEF74162B0EA3B700A074ED /* NSPredicate+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSPredicate+Helper.swift"; sourceTree = "<group>"; };
+		0DEF74192B0EA42100A074ED /* CoreDataLocalManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataLocalManager.swift; sourceTree = "<group>"; };
+		0DEF741B2B0EA4E500A074ED /* CoreDataLocalManager+UsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataLocalManager+UsersRepository.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +72,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D0D84E82AF4A22B0070BB5D /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				0DEF74112B0D57FB00A074ED /* Repository */,
+				0D0D84E92AF4A2360070BB5D /* RemoteDatamNager */,
+				0DC646E62AE2385D00CC36A4 /* LocalDataManager */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		0D0D84E92AF4A2360070BB5D /* RemoteDatamNager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RemoteDatamNager;
+			sourceTree = "<group>";
+		};
+		0D7897972AF54BE000A4EFCF /* ContactsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				0D7897982AF54C2A00A4EFCF /* ContactsScreenView.swift */,
+				0DEF684E2B0AC7BD00A074ED /* AddNewUserScreen.swift */,
+			);
+			path = ContactsScreen;
+			sourceTree = "<group>";
+		};
+		0D79CBCF2B0A9CEB003E161A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0D79CBD02B0A9CFE003E161A /* CDMessage+Helper.swift */,
+				0D79CBD22B0AB54D003E161A /* CDUser+Helper.swift */,
+				0DEF74162B0EA3B700A074ED /* NSPredicate+Helper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		0DAB40B42ADF712C00C5AF87 = {
 			isa = PBXGroup;
 			children = (
@@ -75,7 +127,7 @@
 		0DAB40BF2ADF712C00C5AF87 /* ChatApp */ = {
 			isa = PBXGroup;
 			children = (
-				0DC646E62AE2385D00CC36A4 /* LocalDataManager */,
+				0D0D84E82AF4A22B0070BB5D /* DataManager */,
 				0DAB40D12ADF721800C5AF87 /* Models */,
 				0DAB40CE2ADF71F800C5AF87 /* Views */,
 				0DAB40C02ADF712C00C5AF87 /* ChatAppApp.swift */,
@@ -96,6 +148,7 @@
 		0DAB40CE2ADF71F800C5AF87 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0D7897972AF54BE000A4EFCF /* ContactsScreen */,
 				0DC66ADE2AE6CAFB00CC36A4 /* ChatUsersScreen */,
 				0DC66ADD2AE6CA7F00CC36A4 /* ChatScreen */,
 			);
@@ -114,9 +167,7 @@
 		0DC646E62AE2385D00CC36A4 /* LocalDataManager */ = {
 			isa = PBXGroup;
 			children = (
-				0DC646E12AE236FD00CC36A4 /* Model.xcdatamodeld */,
-				0DC646E42AE2384F00CC36A4 /* DataManager.swift */,
-				0DC6607E2AE45C9A00CC36A4 /* MessageManager.swift */,
+				0DEF74182B0EA3E900A074ED /* CoreData */,
 			);
 			path = LocalDataManager;
 			sourceTree = "<group>";
@@ -127,6 +178,7 @@
 				0DAB40CF2ADF720F00C5AF87 /* MessageView.swift */,
 				0DC646DC2AE22E3400CC36A4 /* ChatScreenTextField.swift */,
 				0DAB40C22ADF712C00C5AF87 /* ChatScreen.swift */,
+				0D0D84E62AF45BCF0070BB5D /* ChatScreenViewModel.swift */,
 			);
 			path = ChatScreen;
 			sourceTree = "<group>";
@@ -134,13 +186,33 @@
 		0DC66ADE2AE6CAFB00CC36A4 /* ChatUsersScreen */ = {
 			isa = PBXGroup;
 			children = (
-				0DAB40D42AE022D800C5AF87 /* ChatHeaderView.swift */,
 				0D06C5282AE0E946008E72D4 /* UserListCell.swift */,
 				0D06C5242AE0D9D2008E72D4 /* ChatUsersScreen.swift */,
-				0DC66ADF2AE6CC7100CC36A4 /* ChatUserScreenViewModel.swift */,
+				0DC66ADF2AE6CC7100CC36A4 /* ChatUsersScreenViewModel.swift */,
 				0DC678402AE72BAE00CC36A4 /* EmptyChatView.swift */,
 			);
 			path = ChatUsersScreen;
+			sourceTree = "<group>";
+		};
+		0DEF74112B0D57FB00A074ED /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				0DEF74122B0D580E00A074ED /* Repository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		0DEF74182B0EA3E900A074ED /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				0D79CBCF2B0A9CEB003E161A /* Helpers */,
+				0DEF74142B0E90F700A074ED /* CoreDataClient.swift */,
+				0DC646E12AE236FD00CC36A4 /* Model.xcdatamodeld */,
+				0D79CBCA2B0822F7003E161A /* PersistenceController.swift */,
+				0DEF74192B0EA42100A074ED /* CoreDataLocalManager.swift */,
+				0DEF741B2B0EA4E500A074ED /* CoreDataLocalManager+UsersRepository.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,18 +287,26 @@
 			files = (
 				0D06C5292AE0E946008E72D4 /* UserListCell.swift in Sources */,
 				0D06C5252AE0D9D2008E72D4 /* ChatUsersScreen.swift in Sources */,
+				0D79CBD32B0AB54D003E161A /* CDUser+Helper.swift in Sources */,
+				0DEF74172B0EA3B700A074ED /* NSPredicate+Helper.swift in Sources */,
 				0DC646DD2AE22E3400CC36A4 /* ChatScreenTextField.swift in Sources */,
-				0DC6607F2AE45C9A00CC36A4 /* MessageManager.swift in Sources */,
+				0DEF74132B0D580E00A074ED /* Repository.swift in Sources */,
+				0D79CBD12B0A9CFE003E161A /* CDMessage+Helper.swift in Sources */,
+				0D0D84E72AF45BCF0070BB5D /* ChatScreenViewModel.swift in Sources */,
 				0DC678412AE72BAE00CC36A4 /* EmptyChatView.swift in Sources */,
-				0DAB40D52AE022D800C5AF87 /* ChatHeaderView.swift in Sources */,
 				0DAB40D02ADF720F00C5AF87 /* MessageView.swift in Sources */,
+				0DEF741A2B0EA42100A074ED /* CoreDataLocalManager.swift in Sources */,
 				0DAB40D32ADF722800C5AF87 /* Message.swift in Sources */,
+				0DEF741C2B0EA4E500A074ED /* CoreDataLocalManager+UsersRepository.swift in Sources */,
 				0DAB40C32ADF712C00C5AF87 /* ChatScreen.swift in Sources */,
 				0DC646E32AE236FD00CC36A4 /* Model.xcdatamodeld in Sources */,
-				0DC646E52AE2384F00CC36A4 /* DataManager.swift in Sources */,
-				0DC66AE02AE6CC7100CC36A4 /* ChatUserScreenViewModel.swift in Sources */,
+				0DEF74152B0E90F700A074ED /* CoreDataClient.swift in Sources */,
+				0D7897992AF54C2A00A4EFCF /* ContactsScreenView.swift in Sources */,
+				0DC66AE02AE6CC7100CC36A4 /* ChatUsersScreenViewModel.swift in Sources */,
 				0DAB40C12ADF712C00C5AF87 /* ChatAppApp.swift in Sources */,
 				0D06C5272AE0D9E2008E72D4 /* User.swift in Sources */,
+				0D79CBCB2B0822F7003E161A /* PersistenceController.swift in Sources */,
+				0DEF684F2B0AC7BD00A074ED /* AddNewUserScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

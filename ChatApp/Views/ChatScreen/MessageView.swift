@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MessageView: View {
     let message: Message
-    @State var displayHour: Bool = false
+    @State private var displayHour: Bool = false
     var body: some View {
         VStack(alignment: message.received ? .leading : .trailing) {
             HStack {

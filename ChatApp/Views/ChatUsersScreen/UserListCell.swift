@@ -21,6 +21,7 @@ struct UserListCell: View {
                     .fontWeight(.bold)
                 if !isNewChatList {
                     Text(lastMessage ?? "")
+                        .lineLimit(1)
                         .font(.caption2)
                 }
             }

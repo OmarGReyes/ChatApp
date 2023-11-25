@@ -13,6 +13,30 @@ struct User: Codable, Identifiable {
     let imageURL: String
     let userId: String
     var lastInteraction: Date?
+    var lastMessage: String?
+    
+    init(CDUser: CDUser) {
+        self.name = CDUser.name ?? ""
+        self.imageURL = CDUser.imageURL ?? ""
+        self.userId = CDUser.id ?? ""
+        self.lastInteraction = CDUser.lastInteraction
+        self.lastMessage = CDUser.lastMessage
+    }
+    
+    internal init(id: UUID = UUID(), name: String, imageURL: String, userId: String, lastInteraction: Date? = nil, lastMessage: String? = nil) {
+        self.id = id
+        self.name = name
+        self.imageURL = imageURL
+        self.userId = userId
+        self.lastInteraction = lastInteraction
+        self.lastMessage = lastMessage
+    }
+}
+
+extension User {
+    var lastInteractionHour: String {
+        lastInteraction?.formatted(.dateTime.hour().minute()) ?? ""
+    }
 }
 
 extension User {

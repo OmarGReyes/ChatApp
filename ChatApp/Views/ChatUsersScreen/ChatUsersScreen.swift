@@ -8,48 +8,41 @@
 import SwiftUI
 
 struct ChatUsersScreen: View {
-    @ObservedObject var chatUserScreenViewModel: ChatUserScreenViewModel
+    @ObservedObject var viewModel: ChatUsersScreenViewModel
     @State var isPresentingUserListSheet = false
     var body: some View {
         Group {
-            if chatUserScreenViewModel.messages.isEmpty {
-                // All these should be outside because i need to put all this into VStack
-                //TODO: - Working on it not finished yet
+            if !viewModel.isAnyChatAvailable() {
                 EmptyChatView(isPresentingUserListSheet: $isPresentingUserListSheet)
             } else {
                 NavigationStack {
-                    List(chatUserScreenViewModel.sortedUsers()) { user in
-                        NavigationLink(destination: ChatScreen(chatUserScreenViewModel: chatUserScreenViewModel,
-                                                               user: user)) {
+                    List(viewModel.sortedUsers()) { user in
+                        NavigationLink(destination: ChatScreen(chatScreenViewModel: viewModel.createChatScreenViewModel(user: user), messageSent: {
+                            Task {
+                                await viewModel.fetchUsers()
+                            }
+                        })) {
                             UserListCell(name: user.name,
-                                         lastMessage: chatUserScreenViewModel.getLastMessageByUserId(userId: user.userId)?.message,
-                                         lastMessageHour: chatUserScreenViewModel.getLastMessageByUserId(userId: user.userId)?.hour)
-                        }
-                    }.toolbar {
+                                         lastMessage: user.lastMessage,
+                                         lastMessageHour: user.lastInteractionHour)
+                        }                    }.toolbar {
                         Button("New chat") {
                             isPresentingUserListSheet.toggle()
                         }
                     }
                 }
             }
-        }.sheet(isPresented: $isPresentingUserListSheet) {
-            NavigationStack {
-                List(chatUserScreenViewModel.sortedUsersAlphabetically()) { user in
-                    NavigationLink(destination: ChatScreen(chatUserScreenViewModel: chatUserScreenViewModel,
-                                                           user: user)) {
-                        UserListCell(name: user.name,
-                                     lastMessage: chatUserScreenViewModel.getLastMessageByUserId(userId: user.userId)?.message,
-                                     lastMessageHour: chatUserScreenViewModel.getLastMessageByUserId(userId: user.userId)?.hour,
-                                     isNewChatList: true)
-                    }
-                }
-            }
+        }.task {
+            await viewModel.fetchUsers()
+        }
+        .sheet(isPresented: $isPresentingUserListSheet) {
+            ContactsScreenView(viewModel: viewModel)
         }
     }
 }
 
-struct ChatUsersScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        ChatUsersScreen(chatUserScreenViewModel: ChatUserScreenViewModel(messageManager: MessageManager()))
-    }
-}
+//struct ChatUsersScreen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ChatUsersScreen(viewModel: ChatUsersScreenViewModel(persistenceController: PersistenceController.shared))
+//    }
+//}
