@@ -11,32 +11,39 @@ struct ChatUsersScreen: View {
     @ObservedObject var viewModel: ChatUsersScreenViewModel
     @State var isPresentingUserListSheet = false
     var body: some View {
-        Group {
-            if !viewModel.isAnyChatAvailable() {
-                EmptyChatView(isPresentingUserListSheet: $isPresentingUserListSheet)
-            } else {
-                NavigationStack {
-                    List(viewModel.sortedUsers()) { user in
-                        NavigationLink(destination: ChatScreen(chatScreenViewModel: viewModel.createChatScreenViewModel(user: user), messageSent: {
-                            Task {
-                                await viewModel.fetchUsers()
+        
+        if viewModel.state == .loading {
+            // TODO: Replace this with a splashView or something
+            Color.black.task {
+                await viewModel.fetchUsers()
+            }
+        } else {
+            Group {
+                if !viewModel.isAnyChatAvailable() {
+                    EmptyChatView(isPresentingUserListSheet: $isPresentingUserListSheet)
+                } else {
+                    NavigationStack {
+                        List(viewModel.sortedUsers()) { user in
+                            NavigationLink(destination: ChatScreen(
+                                chatScreenViewModel: viewModel.createChatScreenViewModel(user: user), messageSent: {
+                                    Task {
+                                        await viewModel.fetchUsers()
+                                    }
+                                })) {
+                                    UserListCell(name: user.name,
+                                                 lastMessage: user.lastMessage,
+                                                 lastMessageHour: user.lastInteractionHour)
+                                }
+                        }.toolbar {
+                            Button("New chat") {
+                                isPresentingUserListSheet.toggle()
                             }
-                        })) {
-                            UserListCell(name: user.name,
-                                         lastMessage: user.lastMessage,
-                                         lastMessageHour: user.lastInteractionHour)
-                        }                    }.toolbar {
-                        Button("New chat") {
-                            isPresentingUserListSheet.toggle()
                         }
                     }
                 }
+            }        .sheet(isPresented: $isPresentingUserListSheet) {
+                ContactsScreenView(viewModel: viewModel)
             }
-        }.task {
-            await viewModel.fetchUsers()
-        }
-        .sheet(isPresented: $isPresentingUserListSheet) {
-            ContactsScreenView(viewModel: viewModel)
         }
     }
 }

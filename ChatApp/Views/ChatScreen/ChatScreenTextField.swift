@@ -20,20 +20,26 @@ struct ChatScreenTextField: View {
                 .keyboardType(.alphabet)
                 .onSubmit {
                     guard !message.isEmpty else { return }
-                    chatScreenViewModel.addMessage(message: Message(message: message,
-                                                               received: false,
-                                                               timestamp: Date(),
-                                                               userId: userId))
-                    messagedSent?()
-                    message = ""
+                    Task {
+                        let date = Date()
+                        await chatScreenViewModel.addMessage(message: Message(message: message,
+                                                                   received: false,
+                                                                   timestamp: date,
+                                                                   userId: userId))
+                        message = ""
+                        messagedSent?()
+                    }
                 }
             Button {
-                chatScreenViewModel.addMessage(message: Message(message: message,
-                                                           received: false,
-                                                           timestamp: Date(),
-                                                           userId: userId))
-                messagedSent?()
-                message = ""
+                Task {
+                    let date = Date()
+                    await chatScreenViewModel.addMessage(message: Message(message: message,
+                                                               received: false,
+                                                               timestamp: date,
+                                                               userId: userId))
+                    message = ""
+                    messagedSent?()
+                }
             } label: {
                 Image(systemName: "paperplane")
                     .foregroundColor(.white)
@@ -50,9 +56,9 @@ struct ChatScreenTextField: View {
     }
 }
 
-struct ChatScreenTextField_Previews: PreviewProvider {
-    static var previews: some View {
-        let user = User.sampleUsers.first!
-        ChatScreenTextField(chatScreenViewModel: ChatScreenViewModel(user: user), userId: user.userId)
-    }
-}
+//struct ChatScreenTextField_Previews: PreviewProvider {
+//    static var previews: some View {
+//        let user = User.sampleUsers.first!
+//        ChatScreenTextField(chatScreenViewModel: ChatScreenViewModel(user: user), userId: user.userId)
+//    }
+//}

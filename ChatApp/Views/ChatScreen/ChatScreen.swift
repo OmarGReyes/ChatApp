@@ -35,6 +35,9 @@ struct ChatScreen: View {
                     messageSent?()
                 }
             }
+            .task {
+                await chatScreenViewModel.fetchMessages()
+            }
             .navigationTitle(Text(chatScreenViewModel.user.name))
     }
     
@@ -52,8 +55,8 @@ extension ChatScreen {
     }
 }
 
-struct ChatScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        ChatScreen(chatScreenViewModel: ChatScreenViewModel(user: User.sampleUsers.first!), messageSent: nil)
-    }
-}
+//struct ChatScreen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ChatScreen(chatScreenViewModel: ChatScreenViewModel(user: User.sampleUsers.first!), messageSent: nil)
+//    }
+//}

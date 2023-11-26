@@ -92,7 +92,8 @@ final class CoreDataClient {
     }
 
     func update<T: NSManagedObject>(entity: T.Type,
-                                    predicate: NSPredicate) async throws -> T {
+                                    predicate: NSPredicate,
+                                    _ body: @escaping(inout T) -> Void) async throws -> T {
         
         
         return try await context.perform {
@@ -103,6 +104,7 @@ final class CoreDataClient {
                 request.predicate = predicate
                 var object = try self.context.fetch(request).first
                 if object != nil {
+                    body(&object!)
                     try self.context.save()
                     return object!
                 } else {

@@ -8,58 +8,32 @@
 import Foundation
 
 final class ChatScreenViewModel: ObservableObject {
-    let viewContext = PersistenceController.shared.viewContext
+    private var repository: MessageRepositoryProtocol
     @Published var messages: [Message] = []
     @Published var user: User
     
-    init(user: User) {
+    init(user: User, repository: MessageRepositoryProtocol) {
         self.user = user
-        fetchMessages(user: user)
+        self.repository = repository
     }
     
-    func fetchMessages(user: User) {
-        let request = CDMessage.fetch()
-        request.predicate = NSPredicate(format: "userId == %@", user.userId as CVarArg)
-        do {
-            messages = try viewContext.fetch(request).compactMap({ CDMessage in
-                Message(CDMessage: CDMessage)
-            })
-        } catch {
-            print("Decoding error")
+    func fetchMessages() async {
+        if let messages = try? await repository.fetchMessagesForUser(user) {
+            await MainActor.run {
+                self.messages = messages
+            }
         }
     }
     
-    func addMessage(message: Message) {
-        messages.append(message)
-        let CDMessage = CDMessage(context: viewContext)
-        CDMessage.id = message.id
-        CDMessage.userId = message.userId
-        CDMessage.received = false
-        CDMessage.timestamp = message.timestamp
-        CDMessage.message = message.message
-        
-        updateUserLastInteraction(timestamp: message.timestamp, message: message.message)
-        save()
+    func addMessage(message: Message) async {
+        await repository.addMessage(message)
+        let _ = await (fetchMessages(), updateUserLastInteraction(timestamp: message.timestamp, message: message.message))
     }
-    
-    private func save() {
-        do {
-            try viewContext.save()
-        } catch(let error) {
-            print(error)
-        }
-    }
-    
-    private func updateUserLastInteraction(timestamp: Date, message: String) {
-        let request = CDUser.fetch()
-        request.predicate = NSPredicate(format: "id == %@", user.userId as CVarArg)
-        do {
-            let CDuser = try viewContext.fetch(request).first
-            CDuser?.setValue(timestamp, forKey: "lastInteraction")
-            CDuser?.setValue(message, forKey: "lastMessage")
-            save()
-        } catch {
-            print("error")
-        }
+
+    private func updateUserLastInteraction(timestamp: Date, message: String) async {
+        await repository.updateUserLastInteraction(
+            userId: user.userId,
+            timestamp: timestamp,
+            message: message)
     }
 }

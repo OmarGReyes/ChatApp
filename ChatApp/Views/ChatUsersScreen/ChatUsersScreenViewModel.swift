@@ -8,19 +8,18 @@
 import CoreData
 import Foundation
 
-protocol ChatUserScreenViewModelProtocol: ObservableObject {
-    func sortedUsers() -> [User]
+enum ChatUsersScreenState {
+    case loading
+    case loaded
 }
 
-
-final class ChatUsersScreenViewModel: ChatUserScreenViewModelProtocol, ObservableObject {
+final class ChatUsersScreenViewModel: ObservableObject {
     @Published var users: [User] = []
-    private let viewContext: NSManagedObjectContext
+    @Published var state:  ChatUsersScreenState = .loading
     private let usersRepository: UsersRepositoryProtocol
     
     init(persistenceController: PersistenceController,
          usersRepository: UsersRepositoryProtocol) {
-        self.viewContext = persistenceController.viewContext
         self.usersRepository = usersRepository
     }
     
@@ -33,13 +32,12 @@ final class ChatUsersScreenViewModel: ChatUserScreenViewModelProtocol, Observabl
 
         return userWithInteraction != nil
     }
-    
-    // Esto lo debo hacer en el dataManager es decir, pasar la solicitud y que allá resuelvan ósea la función sí pero
-    // la ejecución del request al viewContext y todo eso no
+
     func fetchUsers() async {
         let fetchedUsers = await usersRepository.fetchUsers()
         await MainActor.run(body: {
             users = fetchedUsers
+            state = .loaded
         })
     }
     
@@ -58,15 +56,7 @@ final class ChatUsersScreenViewModel: ChatUserScreenViewModelProtocol, Observabl
             await self.fetchUsers()
         }
     }
-    
-    private func save() {
-        do {
-            try viewContext.save()
-        } catch {
-            print("Error saving")
-        }
-    }
-    
+
     func sortedUsers() -> [User] {
         users.filter { user in
             user.lastInteraction != nil
@@ -78,6 +68,7 @@ final class ChatUsersScreenViewModel: ChatUserScreenViewModelProtocol, Observabl
     }
     
     func createChatScreenViewModel(user: User) -> ChatScreenViewModel {
-        ChatScreenViewModel(user: user)
+        let repository = MessageRepository(localDataManager: CoreDataLocalManager(coreDataClient: CoreDataClient(PersistenceController.shared.viewContext)))
+        return ChatScreenViewModel(user: user, repository: repository)
     }
 }

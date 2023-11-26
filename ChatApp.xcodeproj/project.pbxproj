@@ -11,10 +11,11 @@
 		0D06C5272AE0D9E2008E72D4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D06C5262AE0D9E2008E72D4 /* User.swift */; };
 		0D06C5292AE0E946008E72D4 /* UserListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D06C5282AE0E946008E72D4 /* UserListCell.swift */; };
 		0D0D84E72AF45BCF0070BB5D /* ChatScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0D84E62AF45BCF0070BB5D /* ChatScreenViewModel.swift */; };
+		0D4CF2CA2B127967003381C6 /* CoreDataLocalManager+MessageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4CF2C92B127967003381C6 /* CoreDataLocalManager+MessageRepository.swift */; };
+		0D4CF2CC2B12A9A2003381C6 /* CDUser+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4CF2CB2B12A9A2003381C6 /* CDUser+Helper.swift */; };
 		0D7897992AF54C2A00A4EFCF /* ContactsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7897982AF54C2A00A4EFCF /* ContactsScreenView.swift */; };
 		0D79CBCB2B0822F7003E161A /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D79CBCA2B0822F7003E161A /* PersistenceController.swift */; };
 		0D79CBD12B0A9CFE003E161A /* CDMessage+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D79CBD02B0A9CFE003E161A /* CDMessage+Helper.swift */; };
-		0D79CBD32B0AB54D003E161A /* CDUser+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D79CBD22B0AB54D003E161A /* CDUser+Helper.swift */; };
 		0DAB40C12ADF712C00C5AF87 /* ChatAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAB40C02ADF712C00C5AF87 /* ChatAppApp.swift */; };
 		0DAB40C32ADF712C00C5AF87 /* ChatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAB40C22ADF712C00C5AF87 /* ChatScreen.swift */; };
 		0DAB40C52ADF712E00C5AF87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DAB40C42ADF712E00C5AF87 /* Assets.xcassets */; };
@@ -38,10 +39,11 @@
 		0D06C5262AE0D9E2008E72D4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0D06C5282AE0E946008E72D4 /* UserListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCell.swift; sourceTree = "<group>"; };
 		0D0D84E62AF45BCF0070BB5D /* ChatScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatScreenViewModel.swift; sourceTree = "<group>"; };
+		0D4CF2C92B127967003381C6 /* CoreDataLocalManager+MessageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataLocalManager+MessageRepository.swift"; sourceTree = "<group>"; };
+		0D4CF2CB2B12A9A2003381C6 /* CDUser+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDUser+Helper.swift"; sourceTree = "<group>"; };
 		0D7897982AF54C2A00A4EFCF /* ContactsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsScreenView.swift; sourceTree = "<group>"; };
 		0D79CBCA2B0822F7003E161A /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		0D79CBD02B0A9CFE003E161A /* CDMessage+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDMessage+Helper.swift"; sourceTree = "<group>"; };
-		0D79CBD22B0AB54D003E161A /* CDUser+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDUser+Helper.swift"; sourceTree = "<group>"; };
 		0DAB40BD2ADF712C00C5AF87 /* ChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DAB40C02ADF712C00C5AF87 /* ChatAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAppApp.swift; sourceTree = "<group>"; };
 		0DAB40C22ADF712C00C5AF87 /* ChatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatScreen.swift; sourceTree = "<group>"; };
@@ -102,8 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				0D79CBD02B0A9CFE003E161A /* CDMessage+Helper.swift */,
-				0D79CBD22B0AB54D003E161A /* CDUser+Helper.swift */,
 				0DEF74162B0EA3B700A074ED /* NSPredicate+Helper.swift */,
+				0D4CF2CB2B12A9A2003381C6 /* CDUser+Helper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -205,12 +207,13 @@
 		0DEF74182B0EA3E900A074ED /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				0D79CBCF2B0A9CEB003E161A /* Helpers */,
+				0D79CBCA2B0822F7003E161A /* PersistenceController.swift */,
 				0DEF74142B0E90F700A074ED /* CoreDataClient.swift */,
 				0DC646E12AE236FD00CC36A4 /* Model.xcdatamodeld */,
-				0D79CBCA2B0822F7003E161A /* PersistenceController.swift */,
 				0DEF74192B0EA42100A074ED /* CoreDataLocalManager.swift */,
 				0DEF741B2B0EA4E500A074ED /* CoreDataLocalManager+UsersRepository.swift */,
+				0D4CF2C92B127967003381C6 /* CoreDataLocalManager+MessageRepository.swift */,
+				0D79CBCF2B0A9CEB003E161A /* Helpers */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -287,9 +290,9 @@
 			files = (
 				0D06C5292AE0E946008E72D4 /* UserListCell.swift in Sources */,
 				0D06C5252AE0D9D2008E72D4 /* ChatUsersScreen.swift in Sources */,
-				0D79CBD32B0AB54D003E161A /* CDUser+Helper.swift in Sources */,
 				0DEF74172B0EA3B700A074ED /* NSPredicate+Helper.swift in Sources */,
 				0DC646DD2AE22E3400CC36A4 /* ChatScreenTextField.swift in Sources */,
+				0D4CF2CA2B127967003381C6 /* CoreDataLocalManager+MessageRepository.swift in Sources */,
 				0DEF74132B0D580E00A074ED /* Repository.swift in Sources */,
 				0D79CBD12B0A9CFE003E161A /* CDMessage+Helper.swift in Sources */,
 				0D0D84E72AF45BCF0070BB5D /* ChatScreenViewModel.swift in Sources */,
@@ -301,6 +304,7 @@
 				0DAB40C32ADF712C00C5AF87 /* ChatScreen.swift in Sources */,
 				0DC646E32AE236FD00CC36A4 /* Model.xcdatamodeld in Sources */,
 				0DEF74152B0E90F700A074ED /* CoreDataClient.swift in Sources */,
+				0D4CF2CC2B12A9A2003381C6 /* CDUser+Helper.swift in Sources */,
 				0D7897992AF54C2A00A4EFCF /* ContactsScreenView.swift in Sources */,
 				0DC66AE02AE6CC7100CC36A4 /* ChatUsersScreenViewModel.swift in Sources */,
 				0DAB40C12ADF712C00C5AF87 /* ChatAppApp.swift in Sources */,

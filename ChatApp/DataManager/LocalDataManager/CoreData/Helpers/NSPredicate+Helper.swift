@@ -21,4 +21,15 @@ extension NSPredicate {
             }
         }
     }
+    
+    enum MessagePredicates {
+        case findMessageByUserId(String)
+        
+        var predicate: NSPredicate {
+            switch self {
+            case .findMessageByUserId(let id):
+                return NSPredicate(format: "userId == %@", id)
+            }
+        }
+    }
 }

@@ -13,9 +13,7 @@ extension CoreDataLocalManager: UsersRepositoryProtocol {
         do {
             let users = try await coreDataClient.getAll(entity: CDUser.self)
             
-            return users.compactMap { user in
-                User(CDUser: user)
-            }
+            return users.compactMap { $0.toDomain() }
         } catch {
             return []
         }
