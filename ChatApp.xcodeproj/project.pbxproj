@@ -33,6 +33,7 @@
 		0DCC4B2E2B2DF3AD00F7AC61 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 0DCC4B2D2B2DF3AD00F7AC61 /* FirebaseAuth */; };
 		0DCC4B302B2DF3AD00F7AC61 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 0DCC4B2F2B2DF3AD00F7AC61 /* FirebaseFirestore */; };
 		0DCC4B322B2DF3AD00F7AC61 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 0DCC4B312B2DF3AD00F7AC61 /* FirebaseStorage */; };
+		0DCC4B342B2E013000F7AC61 /* PhotoPickerLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCC4B332B2E013000F7AC61 /* PhotoPickerLoginView.swift */; };
 		0DEF684F2B0AC7BD00A074ED /* AddNewUserScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEF684E2B0AC7BD00A074ED /* AddNewUserScreen.swift */; };
 		0DEF74132B0D580E00A074ED /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEF74122B0D580E00A074ED /* Repository.swift */; };
 		0DEF74152B0E90F700A074ED /* CoreDataClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEF74142B0E90F700A074ED /* CoreDataClient.swift */; };
@@ -66,6 +67,7 @@
 		0DCC4B242B2DF15D00F7AC61 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		0DCC4B272B2DF1CC00F7AC61 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		0DCC4B2A2B2DF2FE00F7AC61 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0DCC4B332B2E013000F7AC61 /* PhotoPickerLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerLoginView.swift; sourceTree = "<group>"; };
 		0DEF684E2B0AC7BD00A074ED /* AddNewUserScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewUserScreen.swift; sourceTree = "<group>"; };
 		0DEF74122B0D580E00A074ED /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		0DEF74142B0E90F700A074ED /* CoreDataClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataClient.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 			children = (
 				0DCC4B222B2DF12000F7AC61 /* LoginView.swift */,
 				0DCC4B242B2DF15D00F7AC61 /* LoginViewModel.swift */,
+				0DCC4B332B2E013000F7AC61 /* PhotoPickerLoginView.swift */,
 			);
 			path = LoginScreen;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DCC4B342B2E013000F7AC61 /* PhotoPickerLoginView.swift in Sources */,
 				0D06C5292AE0E946008E72D4 /* UserListCell.swift in Sources */,
 				0D06C5252AE0D9D2008E72D4 /* ChatUsersScreen.swift in Sources */,
 				0DEF74172B0EA3B700A074ED /* NSPredicate+Helper.swift in Sources */,

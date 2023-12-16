@@ -31,24 +31,12 @@ struct LoginView: View {
                 }
                 .pickerStyle(.segmented)
                 .padding()
-                
-                // Take this to another view
+
                 if !isLoginMode {
-                    PhotosPicker(selection: $viewModel.imageSelection, matching: .images) {
-                        if let image = viewModel.selectedImage {
-                            Image(uiImage: image)
-                                .resizable()
-                                .clipShape(Circle())
-                                .frame(width: 90, height: 90)
-                                
-                        } else {
-                            VStack {
-                                Image(systemName: "person.fill")
-                                    .font(.system(size: 64))
-                                Text("Add your own image")
-                            }
-                        }
-                    }
+                    PhotoPickerLoginView(
+                        imageSelection: $viewModel.imageSelection,
+                        selectedImage: viewModel.selectedImage
+                    )
                 }
                 
                 Group {
@@ -69,6 +57,7 @@ struct LoginView: View {
                         .padding()
                         .foregroundColor(.white)
                         .background(Color.blue)
+                        .cornerRadius(10)
                         .padding(.top)
                 }
                 
