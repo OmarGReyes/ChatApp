@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+// TODO: - Sobreescribir navigation y colocar acción a back button
+// TODO: - UnitTesting a viewModel y echar ojo a UITesting
+// TODO: - Sign in y sign uop with firebase
 struct ChatScreen: View {
     @State private var message: String = ""
     @ObservedObject var chatScreenViewModel: ChatScreenViewModel

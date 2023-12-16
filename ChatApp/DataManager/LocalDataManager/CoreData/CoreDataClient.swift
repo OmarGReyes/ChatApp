@@ -26,7 +26,7 @@ final class CoreDataClient {
                                     predicate: NSPredicate? = nil,
                                     sortDescriptor: [NSSortDescriptor]? = nil) async throws -> [T] {
         
-        try await context.perform({
+        try await context.perform {
             do {
                 guard let request: NSFetchRequest<T> = T.fetchRequest() as? NSFetchRequest<T> else {
                     throw Failure.cacheError
@@ -39,8 +39,7 @@ final class CoreDataClient {
             } catch {
                 throw error
             }
-
-        })
+        }
     }
 
     func delete<T: NSManagedObject>(entity: T.Type,
@@ -51,7 +50,7 @@ final class CoreDataClient {
         let privateMOC = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
         privateMOC.parent = context
         
-        try await privateMOC.perform({
+        try await privateMOC.perform {
             do {
                 guard let request: NSFetchRequest<T> = T.fetchRequest() as? NSFetchRequest<T> else {
                     throw Failure.cacheError
@@ -74,8 +73,7 @@ final class CoreDataClient {
             } catch {
                 throw Failure.cacheError
             }
-
-        })
+        }
     }
 
     func add<T: NSManagedObject>(entity: T.Type,  _ body: @escaping (inout T) -> Void) async throws -> T {
@@ -120,7 +118,7 @@ final class CoreDataClient {
 
     func get<T: NSManagedObject>(entity: T.Type, predicate: NSPredicate) async throws -> T? {
         
-        try await context.perform({
+        try await context.perform{
             do {
                 guard let request: NSFetchRequest<T> = T.fetchRequest() as? NSFetchRequest<T> else {
                     throw Failure.cacheError
@@ -132,6 +130,6 @@ final class CoreDataClient {
                 throw error
             }
 
-        })
+        }
     }
 }
