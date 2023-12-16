@@ -19,6 +19,7 @@ jobs:
     - name: Build
       run:
        swift package init --type library
+      run:
        swift build -v
     - name: Run tests
       run: swift test -v
