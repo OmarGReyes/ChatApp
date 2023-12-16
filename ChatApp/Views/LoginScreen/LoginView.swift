@@ -33,7 +33,7 @@ struct LoginView: View {
                 .padding()
 
                 if !isLoginMode {
-                    PhotoPickerLoginVew(
+                    PhotoPickerLoginView(
                         imageSelection: $viewModel.imageSelection,
                         selectedImage: viewModel.selectedImage
                     )
