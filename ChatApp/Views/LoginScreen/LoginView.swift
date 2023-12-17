@@ -12,14 +12,6 @@ struct LoginView: View {
     @State private var isLoginMode = false
     @StateObject private var viewModel = LoginViewModel()
     
-    private var navigationTitle: String {
-        isLoginMode ? "Login" : "Create Account"
-    }
-    
-    private var buttonTitle: String {
-        isLoginMode ? "Login" : "Create Account"
-    }
-    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -56,10 +48,10 @@ struct LoginView: View {
                         .frame(maxWidth: .infinity)
                         .padding()
                         .foregroundColor(.white)
-                        .background(Color.blue)
+                        .background(buttonBackgroundColor())
                         .cornerRadius(10)
                         .padding(.top)
-                }
+                }.disabled(isLoginMode ? !viewModel.isLoginButtonEnabled() : !viewModel.isRegisterButtonEnabled())
                 
                 if !viewModel.errorMessage.isEmpty {
                     Text(viewModel.errorMessage)
@@ -83,6 +75,27 @@ struct LoginView: View {
             .padding()
             .navigationTitle(navigationTitle)
             .background(Color(white: 0.92))
+        }
+    }
+}
+
+// MARK: - Computed properties
+extension LoginView {
+    private var navigationTitle: String {
+        isLoginMode ? "Login" : "Create Account"
+    }
+    
+    private var buttonTitle: String {
+        isLoginMode ? "Login" : "Create Account"
+    }
+    
+    private func buttonBackgroundColor() -> Color {
+        if isLoginMode && viewModel.isLoginButtonEnabled() {
+            return .blue
+        } else if !isLoginMode && viewModel.isRegisterButtonEnabled() {
+            return .blue
+        } else {
+            return .gray
         }
     }
 }
