@@ -23,7 +23,6 @@ final class LoginViewModel: ObservableObject {
     
     func signUp() {
         guard !email.isEmpty, !password.isEmpty else {
-            print("No email or password")
             return
         }
         
@@ -35,11 +34,11 @@ final class LoginViewModel: ObservableObject {
                 successMessage = "User registered successfully"
                 email = ""
                 password = ""
-                try? await Task.sleep(nanoseconds: 2_000_000_000)
+                try? await Task.sleep(nanoseconds: 5_000_000_000)
                 self.successMessage = ""
             } catch {
                 self.errorMessage = error.localizedDescription
-                try? await Task.sleep(nanoseconds: 2_000_000_000)
+                try? await Task.sleep(nanoseconds: 5_000_000_000)
                 self.errorMessage = ""
             }
         }
@@ -51,14 +50,22 @@ final class LoginViewModel: ObservableObject {
                 try await AuthenticationManager.shared.signInUser(email: email,
                                                                   password: password)
                 successMessage = "User logged in successfully"
-                try? await Task.sleep(nanoseconds: 2_000_000_000)
+                try? await Task.sleep(nanoseconds: 5_000_000_000)
                 self.successMessage = ""
             } catch {
                 self.errorMessage = error.localizedDescription
-                try? await Task.sleep(nanoseconds: 2_000_000_000)
+                try? await Task.sleep(nanoseconds: 5_000_000_000)
                 self.errorMessage = ""
             }
         }
+    }
+    
+    func isRegisterButtonEnabled() -> Bool {
+        return selectedImage != nil && !email.isEmpty && !password.isEmpty
+    }
+    
+    func isLoginButtonEnabled() -> Bool {
+        return !email.isEmpty && !password.isEmpty
     }
     
     private func setImage(from selection: PhotosPickerItem?) {
