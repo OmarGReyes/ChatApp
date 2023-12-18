@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension CoreDataLocalManager: UsersRepositoryProtocol {
+extension CoreDataLocalManager: UsersLocalStorageProtocol {
     func fetchCurrentUser() -> User {
         User(name: "", imageURL: "", userId: "")
     }

@@ -10,13 +10,17 @@ import Firebase
 
 @main
 struct ChatAppApp: App {
+    let loginManager: LoginRepositoryProtocol
     init() {
         FirebaseApp.configure()
+        self.loginManager = FirebaseAuthManager(firebaseClient: FirebaseClient.shared)
     }
     
     var body: some Scene {
         WindowGroup {
-            LoginView(viewModel: LoginViewModel(repository: FirebaseAuthManager(firebaseClient: FirebaseClient.shared)))
+            LoginView(viewModel: LoginViewModel(
+                repository: LoginRepository(loginManager: loginManager)
+            ))
         }
     }
 }

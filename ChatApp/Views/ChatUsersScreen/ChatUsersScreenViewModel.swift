@@ -16,8 +16,7 @@ enum ChatUsersScreenState {
 final class ChatUsersScreenViewModel: ObservableObject {
     @Published var users: [User] = []
     @Published var state:  ChatUsersScreenState = .loading
-    @Published var userName = ""
-    @Published var imageURL = ""
+    @Published var user: User?
     private let usersRepository: UsersRepositoryProtocol
     
     init(usersRepository: UsersRepositoryProtocol) {
@@ -27,6 +26,15 @@ final class ChatUsersScreenViewModel: ObservableObject {
     func logOut() {
         try? FirebaseClient.shared.signOut()
     }
+    
+    func fetchCurrentUserInfo() async {
+        do {
+            self.user = try await usersRepository.fetchCurrentUserInfo()
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
     
     func isAnyChatAvailable() -> Bool {
         guard !users.isEmpty else { return false }
