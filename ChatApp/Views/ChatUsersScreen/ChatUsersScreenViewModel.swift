@@ -13,6 +13,7 @@ enum ChatUsersScreenState {
     case loaded
 }
 
+@MainActor
 final class ChatUsersScreenViewModel: ObservableObject {
     @Published var users: [User] = []
     @Published var state:  ChatUsersScreenState = .loading
