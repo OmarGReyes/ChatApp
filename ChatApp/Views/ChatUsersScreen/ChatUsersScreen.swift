@@ -15,41 +15,34 @@ struct ChatUsersScreen: View {
         
         if viewModel.state == .loading {
             // TODO: Replace this with a splashView or something
+            CustomUserBar(userName: viewModel.userName, imageURL: viewModel.imageURL)
             Color.black.task {
                 await viewModel.fetchUsers()
             }
         } else {
             Group {
                 if !viewModel.isAnyChatAvailable() {
-                    EmptyChatView(isPresentingUserListSheet: $isPresentingUserListSheet)
+                    VStack {
+                        CustomUserBar(userName: viewModel.userName, imageURL: viewModel.imageURL)
+                        EmptyChatView(isPresentingUserListSheet: $isPresentingUserListSheet)
+                    }
                 } else {
                     NavigationStack {
-                        List(viewModel.sortedUsers()) { user in
-                            NavigationLink(destination: ChatScreen(
-                                chatScreenViewModel: viewModel.createChatScreenViewModel(user: user), messageSent: {
-                                    Task {
-                                        await viewModel.fetchUsers()
-                                    }
-                                })) {
-                                    UserListCell(name: user.name,
-                                                 lastMessage: user.lastMessage,
-                                                 lastMessageHour: user.lastInteractionHour)
-                                }
-                        }.toolbar {
-                            Button("New chat") {
-                                isPresentingUserListSheet.toggle()
+                        CustomUserBar(userName: viewModel.userName, imageURL: viewModel.imageURL)
+                        UsersListView(isPresentingUserListSheet: $isPresentingUserListSheet,
+                                      usersList: viewModel.sortedUsers(),
+                                      chatScreenViewModel: viewModel.createChatScreenViewModel(user:),
+                                      fetchUsers: {
+                            Task {
+                                await viewModel.fetchUsers()
                             }
-                            
+                        }).toolbar {
                             Button("Log out", role: .destructive) {
                                 viewModel.logOut()
                                 dismiss()
                             }
                         }
-                    }.overlay(alignment: .bottom, content: {
-                        NewMessageButton() {
-                            isPresentingUserListSheet.toggle()
-                        }
-                    })
+                    }
                 }
             }.sheet(isPresented: $isPresentingUserListSheet) {
                 ContactsScreenView(viewModel: viewModel)

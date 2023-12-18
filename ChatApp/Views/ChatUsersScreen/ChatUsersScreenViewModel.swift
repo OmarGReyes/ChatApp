@@ -16,6 +16,8 @@ enum ChatUsersScreenState {
 final class ChatUsersScreenViewModel: ObservableObject {
     @Published var users: [User] = []
     @Published var state:  ChatUsersScreenState = .loading
+    @Published var userName = ""
+    @Published var imageURL = ""
     private let usersRepository: UsersRepositoryProtocol
     
     init(usersRepository: UsersRepositoryProtocol) {
