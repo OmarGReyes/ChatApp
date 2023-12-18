@@ -18,9 +18,12 @@ final class ChatUsersScreenViewModel: ObservableObject {
     @Published var state:  ChatUsersScreenState = .loading
     private let usersRepository: UsersRepositoryProtocol
     
-    init(persistenceController: PersistenceController,
-         usersRepository: UsersRepositoryProtocol) {
+    init(usersRepository: UsersRepositoryProtocol) {
         self.usersRepository = usersRepository
+    }
+    
+    func logOut() {
+        try? FirebaseClient.shared.signOut()
     }
     
     func isAnyChatAvailable() -> Bool {

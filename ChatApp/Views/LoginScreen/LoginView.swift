@@ -10,7 +10,7 @@ import PhotosUI
 
 struct LoginView: View {
     @State private var isLoginMode = false
-    @StateObject private var viewModel = LoginViewModel()
+    @ObservedObject var viewModel: LoginViewModel
     
     var body: some View {
         NavigationView {
@@ -35,6 +35,10 @@ struct LoginView: View {
                     TextField("Email", text: $viewModel.email)
                         .keyboardType(.emailAddress)
                         .textInputAutocapitalization(.never)
+                    // TODO: Add this modification later
+//                    if !isLoginMode {
+//                        TextField("Name", text: $viewModel.name)
+//                    }
                     SecureField("Password", text: $viewModel.password)
                 }
                 .padding(12)
@@ -70,11 +74,13 @@ struct LoginView: View {
                         .foregroundColor(.white)
                         .background(Color.green)
                 }
-                
             }
             .padding()
             .navigationTitle(navigationTitle)
             .background(Color(white: 0.92))
+            .fullScreenCover(isPresented: $viewModel.isLoggedIn) {
+                viewModel.createUsersScreen()
+            }
         }
     }
 }
@@ -102,6 +108,6 @@ extension LoginView {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView(viewModel: LoginViewModel(repository: FirebaseAuthManager(firebaseClient: FirebaseClient.shared)))
     }
 }

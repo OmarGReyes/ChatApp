@@ -10,31 +10,13 @@ import Firebase
 
 @main
 struct ChatAppApp: App {
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    // Fix this to inject the dependencies from outside
-    let usersRepository = UsersRepository(
-        usersLocalDataManager: CoreDataLocalManager(
-            coreDataClient: CoreDataClient(PersistenceController.shared.viewContext)
-        )
-    )
+    init() {
+        FirebaseApp.configure()
+    }
+    
     var body: some Scene {
         WindowGroup {
-            // This could be an environmentObject
-//            ChatUsersScreen(viewModel: ChatUsersScreenViewModel(
-//                persistenceController: PersistenceController.shared,
-//                usersRepository: usersRepository)
-//            )
-            LoginView()
+            LoginView(viewModel: LoginViewModel(repository: FirebaseAuthManager(firebaseClient: FirebaseClient.shared)))
         }
     }
-}
-
-
-class AppDelegate: NSObject, UIApplicationDelegate {
-  func application(_ application: UIApplication,
-                   didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-    FirebaseApp.configure()
-
-    return true
-  }
 }

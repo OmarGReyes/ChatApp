@@ -62,8 +62,8 @@
             filePath = "ChatApp/DataManager/Repository/Repository.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "fetchUsers()"
             landmarkType = "7">
             <Locations>
@@ -172,6 +172,51 @@
                   endingLineNumber = "25"
                   offsetFromSymbolStart = "32">
                </Location>
+               <Location
+                  uuid = "F1972D0A-9F97-43C0-B8A3-C5EF60E20B69 - b48c3c13aa2e25e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for ChatApp.UsersRepository.fetchUsers() async -&gt; Swift.Array&lt;ChatApp.User&gt;"
+                  moduleName = "ChatApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/omargonzalez/Documents/Personal%20projects/ChatApp/ChatApp/DataManager/Repository/Repository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "F1972D0A-9F97-43C0-B8A3-C5EF60E20B69 - f6d2ae8f1ace0bae"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for ChatApp.UsersRepository.fetchUsers() async -&gt; Swift.Array&lt;ChatApp.User&gt;"
+                  moduleName = "ChatApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/omargonzalez/Documents/Personal%20projects/ChatApp/ChatApp/DataManager/Repository/Repository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "F1972D0A-9F97-43C0-B8A3-C5EF60E20B69 - d1961a9ff29aae5c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for ChatApp.UsersRepository.fetchUsers() async -&gt; Swift.Array&lt;ChatApp.User&gt;"
+                  moduleName = "ChatApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/omargonzalez/Documents/Personal%20projects/ChatApp/ChatApp/DataManager/Repository/Repository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "32">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -185,8 +230,8 @@
             filePath = "ChatApp/Views/ChatUsersScreen/ChatUsersScreenViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "addNewUser(userName:)"
             landmarkType = "7">
             <Locations>
@@ -219,6 +264,36 @@
                   startingLineNumber = "45"
                   endingLineNumber = "45"
                   offsetFromSymbolStart = "128">
+               </Location>
+               <Location
+                  uuid = "B38FE767-F304-47C4-89DD-9985A2EEDE06 - 403e59b270df54c4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for ChatApp.ChatUsersScreenViewModel.addNewUser(userName: Swift.String) async -&gt; ()"
+                  moduleName = "ChatApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/omargonzalez/Documents/Personal%20projects/ChatApp/ChatApp/Views/ChatUsersScreen/ChatUsersScreenViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "124">
+               </Location>
+               <Location
+                  uuid = "B38FE767-F304-47C4-89DD-9985A2EEDE06 - 3d4bb12bcca3fb73"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable () async -&gt; () in ChatApp.ChatUsersScreenViewModel.addNewUser(userName: Swift.String) async -&gt; ()"
+                  moduleName = "ChatApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/omargonzalez/Documents/Personal%20projects/ChatApp/ChatApp/Views/ChatUsersScreen/ChatUsersScreenViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "60">
                </Location>
             </Locations>
          </BreakpointContent>

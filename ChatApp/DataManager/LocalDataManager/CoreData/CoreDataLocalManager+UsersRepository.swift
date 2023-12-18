@@ -8,7 +8,10 @@
 import Foundation
 
 extension CoreDataLocalManager: UsersRepositoryProtocol {
-    
+    func fetchCurrentUser() -> User {
+        User(name: "", imageURL: "", userId: "")
+    }
+
     func fetchUsers() async -> [User] {
         do {
             let users = try await coreDataClient.getAll(entity: CDUser.self)
