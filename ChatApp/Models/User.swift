@@ -35,4 +35,10 @@ extension User {
     var lastInteractionHour: String {
         lastInteraction?.formatted(.dateTime.hour().minute()) ?? ""
     }
+
+    init(data: [String: Any]) {
+        self.userId = data["uid"] as? String ?? ""
+        self.name = data["email"] as? String ?? ""
+        self.imageURL = data["profileImageURL"] as? String ?? ""
+    }
 }

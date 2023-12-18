@@ -12,30 +12,35 @@ import PhotosUI
 final class LoginViewModel: ObservableObject {
     @Published var email = ""
     @Published var password = ""
+    @Published var name = ""
     @Published var errorMessage = ""
     @Published var successMessage = ""
+    @Published var isLoggedIn: Bool
     @Published var imageSelection: PhotosPickerItem? = nil {
         didSet {
             setImage(from: imageSelection)
         }
     }
     @Published private(set) var selectedImage: UIImage? = nil
-    
+    let repository: LoginRepositoryProtocol
+
+    init(repository: LoginRepositoryProtocol) {
+        self.repository = repository
+        self.isLoggedIn = repository.isUserLoggedIn()
+    }
+
     func signUp() {
         guard !email.isEmpty, !password.isEmpty else {
             return
         }
-        
         Task {
             do {
-                try await AuthenticationManager.shared.createUser(email: email,
+                try await repository.createUser(email: email,
                                                                   password: password,
                                                                   imageData: selectedImage?.jpegData(compressionQuality: 0.5))
-                successMessage = "User registered successfully"
                 email = ""
                 password = ""
-                try? await Task.sleep(nanoseconds: 5_000_000_000)
-                self.successMessage = ""
+                isLoggedIn = true
             } catch {
                 self.errorMessage = error.localizedDescription
                 try? await Task.sleep(nanoseconds: 5_000_000_000)
@@ -47,11 +52,9 @@ final class LoginViewModel: ObservableObject {
     func login() {
         Task {
             do {
-                try await AuthenticationManager.shared.signInUser(email: email,
-                                                                  password: password)
-                successMessage = "User logged in successfully"
-                try? await Task.sleep(nanoseconds: 5_000_000_000)
-                self.successMessage = ""
+                try await repository.logInUser(email: email,
+                                              password: password)
+                isLoggedIn = true
             } catch {
                 self.errorMessage = error.localizedDescription
                 try? await Task.sleep(nanoseconds: 5_000_000_000)
@@ -66,6 +69,14 @@ final class LoginViewModel: ObservableObject {
     
     func isLoginButtonEnabled() -> Bool {
         return !email.isEmpty && !password.isEmpty
+    }
+    
+    func createUsersScreen() -> ChatUsersScreen {
+        let coreDataClient = CoreDataClient(PersistenceController.shared.viewContext)
+        let localDataManager = CoreDataLocalManager(coreDataClient: coreDataClient)
+        let userRepository = UsersRepository(usersLocalDataManager: localDataManager)
+        let viewModel = ChatUsersScreenViewModel(usersRepository: userRepository)
+        return ChatUsersScreen(viewModel: viewModel)
     }
     
     private func setImage(from selection: PhotosPickerItem?) {

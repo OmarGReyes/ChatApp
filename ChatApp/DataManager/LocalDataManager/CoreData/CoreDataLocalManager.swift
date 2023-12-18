@@ -15,3 +15,7 @@ final class CoreDataLocalManager {
         self.coreDataClient = coreDataClient
     }
 }
+
+final class LocalDataManager {
+    
+}

@@ -10,9 +10,9 @@ import FirebaseAuth
 import FirebaseStorage
 import FirebaseFirestore
 
-final class AuthenticationManager {
+final class FirebaseClient {
     // TODO: - Separate this
-    static let shared = AuthenticationManager()
+    static let shared = FirebaseClient()
     private let auth: Auth
     private let storage: Storage
     private let fireStore: Firestore
@@ -21,6 +21,16 @@ final class AuthenticationManager {
         self.auth = Auth.auth()
         self.storage = Storage.storage()
         self.fireStore = Firestore.firestore()
+    }
+
+    func getCurrentUserId() -> String? {
+        auth.currentUser?.uid
+    }
+
+    func getUserInfo() async throws -> [String : Any]? {
+        guard let uid = getCurrentUserId() else { throw URLError(.fileDoesNotExist) }
+        let data = try await fireStore.collection("users").document(uid).getDocument().data()
+        return data
     }
 
     func createUser(email: String, password: String, imageData: Data?) async throws {
@@ -35,6 +45,10 @@ final class AuthenticationManager {
     
     func signInUser(email: String, password: String) async throws {
         try await auth.signIn(withEmail: email, password: password)
+    }
+    
+    func signOut() throws {
+        try auth.signOut()
     }
     
     func persistImageToStorage(data: Data?, email: String) async throws {

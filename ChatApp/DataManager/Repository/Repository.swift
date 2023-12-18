@@ -22,6 +22,7 @@ protocol MessageRepositoryProtocol {
 
 struct UsersRepository: UsersRepositoryProtocol {
     var usersLocalDataManager: UsersRepositoryProtocol
+
     func fetchUsers() async -> [User] {
         await usersLocalDataManager.fetchUsers()
     }

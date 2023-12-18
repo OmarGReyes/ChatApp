@@ -14,20 +14,16 @@ struct Message: Identifiable, Equatable, Codable {
     let timestamp: Date
     let userId: String
     
-    internal init(id: UUID = UUID(), message: String, received: Bool, timestamp: Date, userId: String) {
+    internal init(id: UUID = UUID(),
+                  message: String,
+                  received: Bool,
+                  timestamp: Date,
+                  userId: String) {
         self.id = id
         self.message = message
         self.received = received
         self.timestamp = timestamp
         self.userId = userId
-    }
-    
-    init(CDMessage: CDMessage) {
-        self.id = CDMessage.id ?? UUID()
-        self.userId = CDMessage.userId ?? ""
-        self.message = CDMessage.message ?? ""
-        self.timestamp = CDMessage.timestamp ?? Date()
-        self.received = CDMessage.received
     }
 }
 

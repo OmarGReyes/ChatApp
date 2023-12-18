@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ChatUsersScreen: View {
+    @Environment(\.dismiss) var dismiss
     @ObservedObject var viewModel: ChatUsersScreenViewModel
     @State var isPresentingUserListSheet = false
     var body: some View {
@@ -38,10 +39,19 @@ struct ChatUsersScreen: View {
                             Button("New chat") {
                                 isPresentingUserListSheet.toggle()
                             }
+                            
+                            Button("Log out", role: .destructive) {
+                                viewModel.logOut()
+                                dismiss()
+                            }
                         }
-                    }
+                    }.overlay(alignment: .bottom, content: {
+                        NewMessageButton() {
+                            isPresentingUserListSheet.toggle()
+                        }
+                    })
                 }
-            }        .sheet(isPresented: $isPresentingUserListSheet) {
+            }.sheet(isPresented: $isPresentingUserListSheet) {
                 ContactsScreenView(viewModel: viewModel)
             }
         }
