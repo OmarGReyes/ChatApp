@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct CustomUserBar: View {
-//    @Binding var shouldShowLogout: Bool
-//    @Binding var isUserCurrentlyLoggedOut: Bool
     var userName: String?
     var imageURL: String?
     var logOutCallback: (() -> Void)?
