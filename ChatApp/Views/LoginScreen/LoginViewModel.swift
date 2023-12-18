@@ -72,9 +72,17 @@ final class LoginViewModel: ObservableObject {
     }
     
     func createUsersScreen() -> ChatUsersScreen {
+        let firebaseClient = FirebaseClient.shared
         let coreDataClient = CoreDataClient(PersistenceController.shared.viewContext)
-        let localDataManager = CoreDataLocalManager(coreDataClient: coreDataClient)
-        let userRepository = UsersRepository(usersLocalDataManager: localDataManager)
+        let localManager = CoreDataLocalManager(coreDataClient: coreDataClient)
+        let localAuthentication = FirebaseAuthManager(firebaseClient: firebaseClient)
+        
+        let usersLocalDataManager = UsersLocalDataManager(
+            localStorage: localManager,
+            localAuthentication: localAuthentication
+        )
+        
+        let userRepository = UsersRepository(usersLocalDataManager: usersLocalDataManager)
         let viewModel = ChatUsersScreenViewModel(usersRepository: userRepository)
         return ChatUsersScreen(viewModel: viewModel)
     }

@@ -27,9 +27,16 @@ final class FirebaseClient {
         auth.currentUser?.uid
     }
 
-    func getUserInfo() async throws -> [String : Any]? {
+    func getCurrentUserInfo() async throws -> [String : Any] {
         guard let uid = getCurrentUserId() else { throw URLError(.fileDoesNotExist) }
-        let data = try await fireStore.collection("users").document(uid).getDocument().data()
+        guard let data =
+        try await fireStore
+                  .collection("users")
+                  .document(uid)
+                  .getDocument()
+                  .data() else {
+                      throw URLError(.fileDoesNotExist)
+                  }
         return data
     }
 

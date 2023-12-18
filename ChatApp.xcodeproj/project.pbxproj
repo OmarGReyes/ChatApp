@@ -30,6 +30,10 @@
 		0DC9EE9A2B2FD56000375530 /* NewMessageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC9EE992B2FD56000375530 /* NewMessageButton.swift */; };
 		0DC9EE9C2B2FDD7F00375530 /* CustomUserBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC9EE9B2B2FDD7F00375530 /* CustomUserBar.swift */; };
 		0DC9EE9E2B30786B00375530 /* UsersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC9EE9D2B30786B00375530 /* UsersListView.swift */; };
+		0DC9EEA02B30A2BB00375530 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC9EE9F2B30A2BB00375530 /* UserRepository.swift */; };
+		0DC9EEA22B30A51900375530 /* CoreDataLocalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC9EEA12B30A51900375530 /* CoreDataLocalManager.swift */; };
+		0DC9EEA52B30A5C700375530 /* FirebaseAuthManager+UsersLocalAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC9EEA42B30A5C700375530 /* FirebaseAuthManager+UsersLocalAuthentication.swift */; };
+		0DC9EEA72B30A8F400375530 /* FirebaseAuthManager+LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC9EEA62B30A8F400375530 /* FirebaseAuthManager+LoginRepository.swift */; };
 		0DCC4B232B2DF12000F7AC61 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCC4B222B2DF12000F7AC61 /* LoginView.swift */; };
 		0DCC4B252B2DF15D00F7AC61 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCC4B242B2DF15D00F7AC61 /* LoginViewModel.swift */; };
 		0DCC4B282B2DF1CC00F7AC61 /* FirebaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCC4B272B2DF1CC00F7AC61 /* FirebaseClient.swift */; };
@@ -40,11 +44,11 @@
 		0DCC4B342B2E013000F7AC61 /* PhotoPickerLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCC4B332B2E013000F7AC61 /* PhotoPickerLoginView.swift */; };
 		0DCC4B4A2B2F95A300F7AC61 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCC4B492B2F95A300F7AC61 /* FirebaseAuthManager.swift */; };
 		0DEF684F2B0AC7BD00A074ED /* AddNewUserScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEF684E2B0AC7BD00A074ED /* AddNewUserScreen.swift */; };
-		0DEF74132B0D580E00A074ED /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEF74122B0D580E00A074ED /* Repository.swift */; };
+		0DEF74132B0D580E00A074ED /* MessageRepisitory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEF74122B0D580E00A074ED /* MessageRepisitory.swift */; };
 		0DEF74152B0E90F700A074ED /* CoreDataClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEF74142B0E90F700A074ED /* CoreDataClient.swift */; };
 		0DEF74172B0EA3B700A074ED /* NSPredicate+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEF74162B0EA3B700A074ED /* NSPredicate+Helper.swift */; };
-		0DEF741A2B0EA42100A074ED /* CoreDataLocalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEF74192B0EA42100A074ED /* CoreDataLocalManager.swift */; };
-		0DEF741C2B0EA4E500A074ED /* CoreDataLocalManager+UsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEF741B2B0EA4E500A074ED /* CoreDataLocalManager+UsersRepository.swift */; };
+		0DEF741A2B0EA42100A074ED /* UsersLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEF74192B0EA42100A074ED /* UsersLocalDataManager.swift */; };
+		0DEF741C2B0EA4E500A074ED /* CoreDataLocalManager+UsersLocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEF741B2B0EA4E500A074ED /* CoreDataLocalManager+UsersLocalStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +76,10 @@
 		0DC9EE992B2FD56000375530 /* NewMessageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageButton.swift; sourceTree = "<group>"; };
 		0DC9EE9B2B2FDD7F00375530 /* CustomUserBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUserBar.swift; sourceTree = "<group>"; };
 		0DC9EE9D2B30786B00375530 /* UsersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListView.swift; sourceTree = "<group>"; };
+		0DC9EE9F2B30A2BB00375530 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		0DC9EEA12B30A51900375530 /* CoreDataLocalManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataLocalManager.swift; sourceTree = "<group>"; };
+		0DC9EEA42B30A5C700375530 /* FirebaseAuthManager+UsersLocalAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseAuthManager+UsersLocalAuthentication.swift"; sourceTree = "<group>"; };
+		0DC9EEA62B30A8F400375530 /* FirebaseAuthManager+LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseAuthManager+LoginRepository.swift"; sourceTree = "<group>"; };
 		0DCC4B222B2DF12000F7AC61 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		0DCC4B242B2DF15D00F7AC61 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		0DCC4B272B2DF1CC00F7AC61 /* FirebaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseClient.swift; sourceTree = "<group>"; };
@@ -79,11 +87,11 @@
 		0DCC4B332B2E013000F7AC61 /* PhotoPickerLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerLoginView.swift; sourceTree = "<group>"; };
 		0DCC4B492B2F95A300F7AC61 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		0DEF684E2B0AC7BD00A074ED /* AddNewUserScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewUserScreen.swift; sourceTree = "<group>"; };
-		0DEF74122B0D580E00A074ED /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		0DEF74122B0D580E00A074ED /* MessageRepisitory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRepisitory.swift; sourceTree = "<group>"; };
 		0DEF74142B0E90F700A074ED /* CoreDataClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataClient.swift; sourceTree = "<group>"; };
 		0DEF74162B0EA3B700A074ED /* NSPredicate+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSPredicate+Helper.swift"; sourceTree = "<group>"; };
-		0DEF74192B0EA42100A074ED /* CoreDataLocalManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataLocalManager.swift; sourceTree = "<group>"; };
-		0DEF741B2B0EA4E500A074ED /* CoreDataLocalManager+UsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataLocalManager+UsersRepository.swift"; sourceTree = "<group>"; };
+		0DEF74192B0EA42100A074ED /* UsersLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersLocalDataManager.swift; sourceTree = "<group>"; };
+		0DEF741B2B0EA4E500A074ED /* CoreDataLocalManager+UsersLocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataLocalManager+UsersLocalStorage.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +111,8 @@
 		0D0D84E82AF4A22B0070BB5D /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
+				0DEF74112B0D57FB00A074ED /* Repositories */,
 				0DCC4B262B2DF1B100F7AC61 /* RemoteDataManager */,
-				0DEF74112B0D57FB00A074ED /* Repository */,
 				0DC646E62AE2385D00CC36A4 /* LocalDataManager */,
 			);
 			path = DataManager;
@@ -189,6 +197,8 @@
 		0DC646E62AE2385D00CC36A4 /* LocalDataManager */ = {
 			isa = PBXGroup;
 			children = (
+				0DEF74192B0EA42100A074ED /* UsersLocalDataManager.swift */,
+				0DC9EEA32B30A59C00375530 /* Firebase */,
 				0DEF74182B0EA3E900A074ED /* CoreData */,
 			);
 			path = LocalDataManager;
@@ -227,6 +237,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		0DC9EEA32B30A59C00375530 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				0DC9EEA42B30A5C700375530 /* FirebaseAuthManager+UsersLocalAuthentication.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
 		0DCC4B212B2DF10B00F7AC61 /* LoginScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,20 +266,22 @@
 		0DCC4B292B2DF2F100F7AC61 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
-				0DCC4B272B2DF1CC00F7AC61 /* FirebaseClient.swift */,
 				0DCC4B2A2B2DF2FE00F7AC61 /* GoogleService-Info.plist */,
+				0DCC4B272B2DF1CC00F7AC61 /* FirebaseClient.swift */,
 				0DCC4B492B2F95A300F7AC61 /* FirebaseAuthManager.swift */,
+				0DC9EEA62B30A8F400375530 /* FirebaseAuthManager+LoginRepository.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
 		};
-		0DEF74112B0D57FB00A074ED /* Repository */ = {
+		0DEF74112B0D57FB00A074ED /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				0DEF74122B0D580E00A074ED /* Repository.swift */,
+				0DEF74122B0D580E00A074ED /* MessageRepisitory.swift */,
 				0DC9EE962B2FC3B100375530 /* LoginRepository.swift */,
+				0DC9EE9F2B30A2BB00375530 /* UserRepository.swift */,
 			);
-			path = Repository;
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		0DEF74182B0EA3E900A074ED /* CoreData */ = {
@@ -270,8 +290,8 @@
 				0D79CBCA2B0822F7003E161A /* PersistenceController.swift */,
 				0DEF74142B0E90F700A074ED /* CoreDataClient.swift */,
 				0DC646E12AE236FD00CC36A4 /* Model.xcdatamodeld */,
-				0DEF74192B0EA42100A074ED /* CoreDataLocalManager.swift */,
-				0DEF741B2B0EA4E500A074ED /* CoreDataLocalManager+UsersRepository.swift */,
+				0DC9EEA12B30A51900375530 /* CoreDataLocalManager.swift */,
+				0DEF741B2B0EA4E500A074ED /* CoreDataLocalManager+UsersLocalStorage.swift */,
 				0D4CF2C92B127967003381C6 /* CoreDataLocalManager+MessageRepository.swift */,
 				0D79CBCF2B0A9CEB003E161A /* Helpers */,
 			);
@@ -364,19 +384,22 @@
 				0DC646DD2AE22E3400CC36A4 /* ChatScreenTextField.swift in Sources */,
 				0DC9EE972B2FC3B100375530 /* LoginRepository.swift in Sources */,
 				0D4CF2CA2B127967003381C6 /* CoreDataLocalManager+MessageRepository.swift in Sources */,
-				0DEF74132B0D580E00A074ED /* Repository.swift in Sources */,
+				0DEF74132B0D580E00A074ED /* MessageRepisitory.swift in Sources */,
 				0DCC4B232B2DF12000F7AC61 /* LoginView.swift in Sources */,
 				0DCC4B282B2DF1CC00F7AC61 /* FirebaseClient.swift in Sources */,
+				0DC9EEA72B30A8F400375530 /* FirebaseAuthManager+LoginRepository.swift in Sources */,
 				0D79CBD12B0A9CFE003E161A /* CDMessage+Helper.swift in Sources */,
+				0DC9EEA02B30A2BB00375530 /* UserRepository.swift in Sources */,
 				0D0D84E72AF45BCF0070BB5D /* ChatScreenViewModel.swift in Sources */,
 				0DC9EE9C2B2FDD7F00375530 /* CustomUserBar.swift in Sources */,
+				0DC9EEA22B30A51900375530 /* CoreDataLocalManager.swift in Sources */,
 				0DC678412AE72BAE00CC36A4 /* EmptyChatView.swift in Sources */,
 				0DAB40D02ADF720F00C5AF87 /* MessageView.swift in Sources */,
-				0DEF741A2B0EA42100A074ED /* CoreDataLocalManager.swift in Sources */,
+				0DEF741A2B0EA42100A074ED /* UsersLocalDataManager.swift in Sources */,
 				0DAB40D32ADF722800C5AF87 /* Message.swift in Sources */,
 				0DC9EE9A2B2FD56000375530 /* NewMessageButton.swift in Sources */,
 				0DCC4B252B2DF15D00F7AC61 /* LoginViewModel.swift in Sources */,
-				0DEF741C2B0EA4E500A074ED /* CoreDataLocalManager+UsersRepository.swift in Sources */,
+				0DEF741C2B0EA4E500A074ED /* CoreDataLocalManager+UsersLocalStorage.swift in Sources */,
 				0DAB40C32ADF712C00C5AF87 /* ChatScreen.swift in Sources */,
 				0DC646E32AE236FD00CC36A4 /* Model.xcdatamodeld in Sources */,
 				0DEF74152B0E90F700A074ED /* CoreDataClient.swift in Sources */,
@@ -389,6 +412,7 @@
 				0DCC4B4A2B2F95A300F7AC61 /* FirebaseAuthManager.swift in Sources */,
 				0D79CBCB2B0822F7003E161A /* PersistenceController.swift in Sources */,
 				0DEF684F2B0AC7BD00A074ED /* AddNewUserScreen.swift in Sources */,
+				0DC9EEA52B30A5C700375530 /* FirebaseAuthManager+UsersLocalAuthentication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

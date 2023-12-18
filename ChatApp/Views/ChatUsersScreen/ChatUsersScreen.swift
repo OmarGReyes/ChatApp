@@ -15,7 +15,7 @@ struct ChatUsersScreen: View {
         
         if viewModel.state == .loading {
             // TODO: Replace this with a splashView or something
-            CustomUserBar(userName: viewModel.userName, imageURL: viewModel.imageURL)
+            CustomUserBar(userName: viewModel.user?.name ?? "", imageURL: viewModel.user?.imageURL ?? "")
             Color.black.task {
                 await viewModel.fetchUsers()
             }
@@ -23,12 +23,14 @@ struct ChatUsersScreen: View {
             Group {
                 if !viewModel.isAnyChatAvailable() {
                     VStack {
-                        CustomUserBar(userName: viewModel.userName, imageURL: viewModel.imageURL)
+                        CustomUserBar(userName: viewModel.user?.name ?? "", imageURL: viewModel.user?.imageURL ?? "")
                         EmptyChatView(isPresentingUserListSheet: $isPresentingUserListSheet)
+                    }.task {
+                        await viewModel.fetchCurrentUserInfo()
                     }
                 } else {
                     NavigationStack {
-                        CustomUserBar(userName: viewModel.userName, imageURL: viewModel.imageURL)
+                        CustomUserBar(userName: viewModel.user?.name ?? "", imageURL: viewModel.user?.imageURL ?? "")
                         UsersListView(isPresentingUserListSheet: $isPresentingUserListSheet,
                                       usersList: viewModel.sortedUsers(),
                                       chatScreenViewModel: viewModel.createChatScreenViewModel(user:),
@@ -42,6 +44,8 @@ struct ChatUsersScreen: View {
                                 dismiss()
                             }
                         }
+                    }.task {
+                        await viewModel.fetchCurrentUserInfo()
                     }
                 }
             }.sheet(isPresented: $isPresentingUserListSheet) {
